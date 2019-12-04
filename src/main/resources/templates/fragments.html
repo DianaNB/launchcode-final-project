@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html style="width: 100%;height: 100%;"lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${title}">Reptile Stuff</title>
+    <link href="https://fonts.googleapis.com/css?family=Emilys+Candy|Finger+Paint|Frijole|Nosifer|Vast+Shadow&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css?family=Dosis:700" rel="stylesheet">
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="circletype.min.js"></script>
+    <script src="http://circletype.labwire.ca/js/plugins.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.js"></script>
+</head>
+
+<header th:fragment="header">
+    <div class="container-fluid">
+        <br>
+        <br>
+        <h2 id="demo1"style="font-size:4vw;font-family: 'Nosifer', cursive;">Title Of My Project</h2>
+        <script type="text/javascript" src="https://rawgit.com/peterhry/CircleType/master/dist/circletype.min.js"></script>
+        <script>
+         const circleType = new CircleType(document.getElementById('demo1'));
+         circleType.radius(500);
+         $('#demo1').circleType({fluid:true});
+updateRadius();
+      </script>
+<!--        font-family: 'Emilys Candy', cursive;-->
+<!--        font-family: 'Vast Shadow', cursive;-->
+<!--        font-family: 'Finger Paint', cursive;-->
+<!--        font-family: 'Frijole', cursive;-->
+<!--        font-family: 'Nosifer', cursive;-->
+<center>
+    <img class="img-responsive thick-green-border" src="/images/ballpython1.jpg" alt="Ball Python."style="position:relative;height:237.5px;width:262.5px;bottom:120px;">
+</center>
+
+
+    <style>
+.thick-green-border{
+    border-color: #eee;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 50%;
+
+</style>
+    </div>
+
+
+    <nav style="text-align: center;">
+        <a href="/"class="brk-btn">Home</a>
+        <a href="/posts/list"class="brk-btn">View All(Posts)</a>
+        <a href="/posts/create-post"class="brk-btn">Add Post</a>
+
+        <hr class="style2">
+    </nav>
+
+    </div>
+</header>
+
+<body th:fragment="body">
+
+<a id="top"></a>
+<div class="container-fluid">
+<!--    <div class="row">-->
+<!--        <div class="col">-->
+<!--            <h2 class="mx-auto"style="font-size:50px;position:absolute; left:80px; top:20px;">Title</h2>-->
+
+<!--            <div class="col-xs-4">-->
+<!--                <br>-->
+<!--                <br>-->
+<!--                <br>-->
+<!--                <br>-->
+<!--                <br>-->
+<!--                <br>-->
+<!--                <br>-->
+<!--                <br>-->
+<!--                <br>-->
+<!--                <br>-->
+<!--                <br>-->
+<!--                <br>-->
+<!--                <br>-->
+<!--                <br>-->
+
+<!--                <img class="img-responsive thick-green-border" src="ballpython1.jpg" alt="Ball Python."style="margin-top:270px;margin-left:120px;position:relative;">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+
+
+        <div class="col-xs-4 mx-auto" style="font-size:15px;position:absolute; left:180px; top:20px;">
+            <a class="brk-btn1"href="/user/register">Register</a>
+            <a class="brk-btn1"href="/user/login">Log In</a>
+            <a class="brk-btn1" th:if="${userId}" href="/user/logout">Log Out</a>
+            <br>
+            <br>
+            <a th:if="${userId}">Welcome!</a>
+<!--            <a th:unless="${userId}">You aren't signed in :(</a>-->
+        </div>
+
+
+
+<!--</body-->
+
+<div class="container-fluid">
+
+
+
+        <style>
+hr.style2 {
+	border-top: 5px double #8c8b8b;
+}
+.brk-btn1 {
+  position: relative;
+  background: none;
+  color: aqua;
+  text-transform: uppercase;
+  font-size:15px;
+  text-decoration: none;
+  border: 0.1em solid aqua;
+  padding: 0.2em 0.2em;
+}
+
+.brk-btn {
+  position: relative;
+  background: none;
+  color: aqua;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0.2em solid aqua;
+  padding: 0.5em 1em;
+}
+
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 93vh;
+  justify-content: center;
+  align-items: center;
+  background: #222;
+  color: #eee;
+  font-family: "Dosis", sans-serif;
+width: 100%;
+height: 100%;
+}
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 14px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255,0,0,0.8);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4);
+}
+        </style>
+
+</div>
+</div>
+
+
+
+</body>
+
+<footer th:fragment="footer" class="page-footer font-small unique-color-dark">
+<br>
+    <br>
+    <div style="background-color: #6351ce;">
+        <div class="container">
+
+            <!-- Grid row-->
+            <div class="row py-4 d-flex align-items-center">
+
+                <!-- Grid column -->
+                <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                    <h6> <a style="color:white;"id="back2Top" title="Back to top" href="#">Back to top</a>
+                    </h6>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left mt-5">
+
+        <!-- Grid row -->
+        <div class="row mt-3">
+
+
+            <!-- Grid column -->
+
+
+        </div>
+        <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright: Adrienne
+
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+</html>
