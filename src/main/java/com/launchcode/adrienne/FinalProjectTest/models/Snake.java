@@ -11,6 +11,9 @@ public enum Snake {
     CORN_SNAKE("Corn Snake","Colubrid"),
     RAT_SNAKE("Rat Snake","Colubrid"),
     INDIGO_SNAKE("Indigo Snake","Colubrid"),
+    KING_SNAKE("Kingsnake","Colubrid"),
+    GRASS_SNAKE("Grass Snake", "Colubrid"),
+    LADDER_SNAKE("Ladder Snake", "Colubrid"),
     EGG_EATING_SNAKE("Egg Eating Snake","Colubrid");
 
 
@@ -22,14 +25,13 @@ public enum Snake {
         return name;
     }
 
-
     public String getCategory() {
         return category;
     }
 
     Snake(String name, String category) {
-        this.name = name;
-        this.category = category;
+            this.name = name;
+            this.category = category;
 
 
 //        for (Snake : Snake.values()) {
