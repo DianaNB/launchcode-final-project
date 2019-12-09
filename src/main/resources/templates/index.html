@@ -7,19 +7,12 @@
 <h1 th:text="${title}">Default Title</h1>
 
 <h1 th:text="${heading}">Default Heading</h1>
-
-
-<!--<i th:unless="${post} and ${post.size()}">No posts yet :( </i>-->
-<!--<h1 th:text="${'Welcome ' + user.username + '!'}"></h1>-->
 <br>
 <br>
 <section class="container-fluid">
-<!--    <div class="col-xs-4">-->
-<!--        <h2><a href ="#"class="text-primary mx-auto text-center"style="white-space: nowrap;">Pythons</a></h2>-->
-<!--        <img class="img-responsive thick-green-border" src="python.jpg" alt="Ball Python."style="position:relative;">-->
-<!--    </div>-->
+
     <div title="Ball Python">
-    <div class="row">
+    <div class="row"style="margin:-20px;">
     <div class="col-xs-6 hvr-float-shadow">
         <h2>Pythons</h2>
         <a href ="posts/posts-in-category"><img src="/images/python.jpg"class="img-responsive thick-green-border"></a>
@@ -48,7 +41,7 @@
 
 <div title="Indigo Snake">
     <div class="row">
-    <div class="col-xs-6 hvr-float-shadow">
+    <div class="col-xs-6 hvr-float-shadow1">
         <h2>Colubrids</h2>
         <a href ="/posts/list"><img src="/images/kingsnake.jpg"class="img-responsive thick-green-border"></a>
         <div class="col text">
@@ -57,7 +50,7 @@
     </div>
     </div>
     </div>
-
+    </div>
 
     <style>
     h1 {
@@ -115,16 +108,49 @@
   transform: translateY(10px);
   /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
 }
+
+  .hvr-float-shadow1 {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-float-shadow1:before {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  /* W3C */
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform, opacity;
+  transition-property: transform, opacity;
+}
+.hvr-float-shadow1:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+  /* move the element up by 5px */
+}
+.hvr-float-shadow1:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {
+  opacity: 1;
+  -webkit-transform: translateY(10px);
+  transform: translateY(10px);
+  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+}
     </style>
-
-
-<!--    <div class="col-xs-4">-->
-<!--        <h2><a href ="#"class="text-primary mx-auto"style="white-space: nowrap;">Boa Constrictors</a></h2>-->
-<!--        <img class="img-responsive thick-green-border" src="boa2.jpg" alt="Boa."style="position:relative;">-->
-
-<!--    </div>-->
-
-
 </section>
 
 
