@@ -1,42 +1,22 @@
 package com.launchcode.adrienne.FinalProjectTest;
 
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.*;
+import org.springframework.web.servlet.handler.MappedInterceptor;
 import org.springframework.web.servlet.resource.GzipResourceResolver;
 import org.springframework.web.servlet.resource.PathResourceResolver;
 
 @Configuration
-public class SpringSecurityConfig implements WebMvcConfigurer {
+public class SpringSecurityConfig {
+
     @Bean
-    public Authentication authentication() {
-        return new Authentication();
+    public MappedInterceptor authentication() {
+        return new MappedInterceptor(new String[] {"/**"},new String[]{"/images/**"}, new Authentication());
     }
-
-//    @Override
-//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//        System.out.println("WebMvcConfigurer - addResourceHandlers() function get loaded...");
-//        registry.addResourceHandler("/resources/static/**")
-//                .addResourceLocations("/resources/");
-////                .addResolver(new PathResourceResolver());
-//
-//        registry.addResourceHandler("/resources/templates/**")
-//                .addResourceLocations("/resources/");
-//        registry
-//                .addResourceHandler("/js/**")
-//                .addResourceLocations("/js/")
-//                .setCachePeriod(3600)
-//                .resourceChain(true)
-//                .addResolver(new GzipResourceResolver())
-//                .addResolver(new PathResourceResolver());
-//    }
-
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-
-        registry.addInterceptor( authentication() ).addPathPatterns("/*");
     }
-
-}
 
 

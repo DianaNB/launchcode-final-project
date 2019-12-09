@@ -16,9 +16,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.js"></script>
 </head>
 
+<!--title-->
 <header th:fragment="header">
     <div class="container-fluid">
-        <h2 id="demo1"style="font-size:4vw;font-family: 'Vast Shadow', cursive;position:absolute; left:180px; top:50px;">Noodle</h2>
+        <h2 id="demo1">Noodle</h2>
         <script type="text/javascript" src="https://rawgit.com/peterhry/CircleType/master/dist/circletype.min.js"></script>
         <script>
          const circleType = new CircleType(document.getElementById('demo1'));
@@ -38,6 +39,13 @@ updateRadius();
     border-style: solid;
     border-radius: 50%;
     box-shadow:0 0 0 2px aqua;
+}
+#demo1 {
+font-size:4vw;
+font-family: 'Vast Shadow', cursive;
+position:absolute;
+left:180px;
+top:50px;
 }
 </style>
 
@@ -66,16 +74,11 @@ updateRadius();
             <a class="brk-btn1" th:if="${userId}" href="/logout">Log Out</a>
             <br>
             <br>
-<!--            <a th:if="${userId}">Welcome!</a>-->
-<!--            <div th:if="${userId}">-->
-                <a th:if="${userId}" th:text="${'Welcome ' + user + '!'}"></a>
-<!--            </div>-->
-
-                        <a style="color:white;"th:unless="${userId}">You aren't signed in :(</a>
+            <a style="color:white;"th:if="${userId}" th:text="${'Welcome ' + user.username + '!'}"></a>
+            <a style="color:white;"th:unless="${userId}">You aren't signed in :(</a>
         </div>
 </div>
 
-<div class="container-fluid">
 <style>
 hr.style2 {
 	border-top: 15px double #8c8b8b;
@@ -139,12 +142,7 @@ height: 100%;
 ::-webkit-scrollbar-thumb:window-inactive {
 	background: rgba(255,0,0,0.4);
 }
-        </style>
-
-</div>
-</div>
-
-
+</style>
 
 </body>
 

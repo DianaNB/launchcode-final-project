@@ -10,7 +10,7 @@ public class Login {
 
     @NotNull
     @Pattern(regexp = "(\\S){4,20}", message = "Password must have 4-20 characters")
-    String password;
+    private String password;
 
     public Login() {}
 

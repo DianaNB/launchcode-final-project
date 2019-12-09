@@ -5,7 +5,6 @@ import com.launchcode.adrienne.FinalProjectTest.models.User;
 import com.launchcode.adrienne.FinalProjectTest.models.data.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -42,7 +41,6 @@ public class Authentication extends HandlerInterceptorAdapter {
                 return false;
             }
         }
-
         return true;
     }
 }

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Created by LaunchCode
  */
+
 public abstract class MainController {
     @Autowired
     protected PostDao postDao;
@@ -22,6 +23,7 @@ public abstract class MainController {
 
     public static final String userSessionKey = "user_id";
 
+    @ModelAttribute("user")
     protected User getUserFromSession(HttpSession session) {
         Integer userId = (Integer) session.getAttribute(userSessionKey);
         return userId == null ? null : userDao.findById(userId).get();
