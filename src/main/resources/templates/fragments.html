@@ -68,10 +68,10 @@ updateRadius();
             <br>
 <!--            <a th:if="${userId}">Welcome!</a>-->
 <!--            <div th:if="${userId}">-->
-<!--                <a th:if="${userId}" th:text="${'Welcome ' + user.username + '!'}"></a>-->
+                <a th:if="${userId}" th:text="${'Welcome ' + user + '!'}"></a>
 <!--            </div>-->
 
-                        <a th:unless="${userId}">You aren't signed in :(</a>
+                        <a style="color:white;"th:unless="${userId}">You aren't signed in :(</a>
         </div>
 </div>
 
