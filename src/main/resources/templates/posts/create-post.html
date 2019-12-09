@@ -6,11 +6,11 @@
 <h2 th:replace="fragments :: title"></h2>
 <h1 th:text="${title}">Default Title</h1>
 
+<div style="border-style:solid;border-color:aqua;border-width:2px;border-spacing:20px;">
+<h2 th:text="${heading}"style="text-align:center;">Default Heading</h2>
 
-<h2 th:text="${heading}">Default Heading</h2>
-
-<div class="container">
-<form method="post"th:object="${post}">
+<div class="container-fluid"style="display:block;">
+<form method="post"th:object="${post}"style="width:800px;">
     <div class="form-group">
         <label th:for="title">Title of New Post:</label>
         <input class="form-control"th:field="*{title}">
@@ -21,9 +21,13 @@
 
     <div class="form-group">
         <label th:for="snakeName">Name:</label>
-        <input class="form-control"th:field="*{snakeName}"placeholder="Name of your snake"style="text-align:center;">
+        <input class="form-control"th:field="*{snakeName}"placeholder="Name of your snake">
         <span th:errors="*{snakeName}" class="error"></span>
-
+<style>
+    ::-webkit-input-placeholder {
+        text-align: center;
+        }
+</style>
     </div>
 
 
@@ -63,19 +67,28 @@
 
     <div class="form-group">
         <label th:for="description">Description:</label>
-        <textarea class="form-control"th:field="*{description}"placeholder="Tell us about your pet snake!"style="cols:40;rows:40;wrap:soft;maxlength:300;text-align:center;"></textarea>
+        <textarea class="form-control description"th:field="*{description}"placeholder="Tell us about your pet snake!"></textarea>
         <span th:errors="*{description}" class="error"></span>
-
+<style>
+    ::-webkit-input-placeholder {
+        text-align: center;
+        }
+        .description {
+        cols:40;
+        rows:40;
+        wrap:soft;
+        max-length:300;
+        }
+</style>
     </div>
 
-
-
-    <center>
+<center>
 <input type="submit"value="Create Post"class="brk-btn">
-    </center>
+</center>
+
 </form>
 </div>
-
+</div>
 <footer th:replace="fragments :: footer"></footer>
 
 </html>

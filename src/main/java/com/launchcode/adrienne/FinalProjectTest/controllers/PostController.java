@@ -52,6 +52,7 @@ public class PostController extends MainController {
     @RequestMapping(value = "view/{postId}", method = RequestMethod.GET)
     public String viewPost(Model model, @PathVariable int postId) {
         Post post = postDao.findById(postId).get();
+        model.addAttribute("heading","Added New Post!");
         model.addAttribute("post", post);
         model.addAttribute("postId", post.getId());
         return "posts/view";

@@ -6,35 +6,93 @@
 <h2 th:replace="fragments :: title"></h2>
 <h1 th:text="${title}">Default Title</h1>
 
-<h2 th:text="${post.title}"></h2>
 
-<div>
-<label th:for="snakeName">Name:</label>
-<a th:text="*{post.snakeName}"></a>
+    <div class="border">
+        <h2 th:text="${heading}">Default Heading</h2>
+    <div class="container-fluid posts">
+        <h2 th:text="${post.title}"></h2>
+
+        <div>
+            <label th:for="snakeName">Name:</label>
+            <a th:text="*{post.snakeName}"></a>
+        </div>
+
+        <div>
+            <label th:for="age">Age:</label>
+            <a th:text="*{post.age}"></a>
+        </div>
+
+        <div>
+            <label th:for="sex">Sex:</label>
+            <a th:text="*{post.sex}"></a>
+        </div>
+
+        <div>
+            <label th:for="snake">Category:</label>
+            <a th:text="*{post.snake.name}"></a>
+        </div>
+
+        <div class="description">
+            <label th:for="description">Description:</label>
+            <a th:text="*{post.description}"></a>
+        </div>
+    </div>
 </div>
 
-<div>
-    <label th:for="age">Age:</label>
-    <a th:text="*{post.age}"></a>
-</div>
+<style>
+    h2{
+       font-family: 'Barriecito', cursive;
+       text-align: center;
 
-<div>
-    <label th:for="sex">Sex:</label>
-    <a th:text="*{post.sex}"></a>
-</div>
+    }
+    .description {
+     word-wrap: break-word;
+    }
+    .border {
+    border-style:solid;
+    border-color:aqua;
+    border-width:2px;
+    border-spacing:20px;
+    }
+    .posts {
+    display:block;
+    text-align:center;
+    width:800px;
+    color:white;
+    font-size:25px;
+    }
+    a {
 
-<div>
-    <label th:for="snake">Category:</label>
-    <a th:text="*{post.snake.name}"></a>
-</div>
+    color:white;
+    }
+</style>
 
-<div>
-    <label th:for="description">Description:</label>
-    <a th:text="*{post.description}"></a>
-</div>
+<!--<h2 th:text="${post.title}"></h2>-->
 
+<!--<div>-->
+<!--<label th:for="snakeName">Name:</label>-->
+<!--<a th:text="*{post.snakeName}"></a>-->
+<!--</div>-->
 
+<!--<div>-->
+<!--    <label th:for="age">Age:</label>-->
+<!--    <a th:text="*{post.age}"></a>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--    <label th:for="sex">Sex:</label>-->
+<!--    <a th:text="*{post.sex}"></a>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--    <label th:for="snake">Category:</label>-->
+<!--    <a th:text="*{post.snake.name}"></a>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--    <label th:for="description">Description:</label>-->
+<!--    <a th:text="*{post.description}"></a>-->
+<!--</div>-->
 <footer th:replace="fragments :: footer"></footer>
-</body>
 </html>
 

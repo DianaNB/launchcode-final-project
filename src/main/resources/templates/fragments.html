@@ -3,10 +3,12 @@
 <head th:fragment="head">
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title th:text="${title}">Reptile Stuff</title>
-    <link href="https://fonts.googleapis.com/css?family=Emilys+Candy|Finger+Paint|Frijole|Nosifer|Vast+Shadow&display=swap" rel="stylesheet">
+    <title th:text="${title}">Noodle | Web App For Snake Lovers</title>
+<!--    CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Barriecito|Emilys+Candy|Finger+Paint|Frijole|Nosifer|Vast+Shadow&display=swap|Waiting+for+the+Sunrise&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
     <link href="https://fonts.googleapis.com/css?family=Dosis:700" rel="stylesheet">
+<!--    JS-->
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="circletype.min.js"></script>
     <script src="http://circletype.labwire.ca/js/plugins.js"></script>
@@ -16,13 +18,6 @@
 
 <header th:fragment="header">
     <div class="container-fluid">
-<!--        <div class="col">-->
-<!--        <img class="img-responsive"src="/images/noodle.jpg"style="position:relative;text-align:left;">-->
-<!--        <div class="col-xs-6 hvr-float-shadow">-->
-<!--            <a href ="posts/posts-in-category"><img src="/images/Blueeyed-Lucy-Blog.jpg"style="position:fixed;width:282.5px,height:283.5px;"class="img-responsive thick-green-border"></a>-->
-<!--        </div>-->
-    </div>
-    </div>
         <h2 id="demo1"style="font-size:4vw;font-family: 'Vast Shadow', cursive;position:absolute; left:180px; top:50px;">Noodle</h2>
         <script type="text/javascript" src="https://rawgit.com/peterhry/CircleType/master/dist/circletype.min.js"></script>
         <script>
@@ -31,27 +26,24 @@
          $('#demo1').circleType({fluid:true});
 updateRadius();
       </script>
-<!--        font-family: 'Emilys Candy', cursive;-->
-<!--        font-family: 'Vast Shadow', cursive;-->
-<!--        font-family: 'Finger Paint', cursive;-->
-<!--        font-family: 'Frijole', cursive;-->
-<!--        font-family: 'Nosifer', cursive;-->
+
 <center>
-    <img class="img-responsive thick-green-border" src="/images/ballpython1.jpg" alt="Ball Python."style="position:relative;height:316.7px;width:350px;bottom:5px;">
+    <img class="img-responsive thick-green-border" src="/images/ballpython1.jpg" alt="Ball Python."style="position:relative;height:316.7px;width:350px;bottom:0px;">
 </center>
 
-
-    <style>
+<style>
 .thick-green-border{
-    border-color: white;
-    border-width: 10px;
+    border-color: #222;
+    border-width: 8px;
     border-style: solid;
     border-radius: 50%;
-
+    box-shadow:0 0 0 2px aqua;
+}
 </style>
-    </div>
 
 
+
+<br>
     <nav style="text-align: center;">
         <a href="/"class="brk-btn">Home</a>
         <a href="/posts/list"class="brk-btn">View All(Posts)</a>
@@ -67,34 +59,6 @@ updateRadius();
 
 <a id="top"></a>
 <div class="container-fluid">
-<!--    <div class="row">-->
-<!--        <div class="col">-->
-<!--            <h2 class="mx-auto"style="font-size:50px;position:absolute; left:80px; top:20px;">Title</h2>-->
-
-<!--            <div class="col-xs-4">-->
-<!--                <br>-->
-<!--                <br>-->
-<!--                <br>-->
-<!--                <br>-->
-<!--                <br>-->
-<!--                <br>-->
-<!--                <br>-->
-<!--                <br>-->
-<!--                <br>-->
-<!--                <br>-->
-<!--                <br>-->
-<!--                <br>-->
-<!--                <br>-->
-<!--                <br>-->
-
-<!--                <img class="img-responsive thick-green-border" src="ballpython1.jpg" alt="Ball Python."style="margin-top:270px;margin-left:120px;position:relative;">-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-
-
-
 
         <div class="col-xs-4 mx-auto" style="font-size:15px;position:absolute; left:10px; top:20px;">
             <a class="brk-btn1"href="/user/register">Register</a>
@@ -102,7 +66,6 @@ updateRadius();
             <a class="brk-btn1" th:if="${userId}" href="/">Log Out</a>
             <br>
             <br>
-
 <!--            <a th:if="${userId}">Welcome!</a>-->
 <!--            <div th:if="${userId}">-->
 <!--                <a th:if="${userId}" th:text="${'Welcome ' + user.username + '!'}"></a>-->
@@ -112,17 +75,11 @@ updateRadius();
         </div>
 </div>
 
-
-
-<!--</body-->
-
 <div class="container-fluid">
-
-
-
-        <style>
+<style>
 hr.style2 {
-	border-top: 5px double #8c8b8b;
+	border-top: 15px double #8c8b8b;
+	width:100%;
 }
 .brk-btn1 {
   position: relative;

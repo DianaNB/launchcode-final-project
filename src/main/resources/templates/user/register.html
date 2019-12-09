@@ -5,18 +5,18 @@
 <body th:replace="fragments :: body"></body>
 <h2 th:replace="fragments :: title"></h2>
 <h1 th:text="${title}">Default Title</h1>
-<h2 th:text="${heading}">Default Heading</h2>
+<div style="border-style:solid;border-color:aqua;border-width:2px;border-spacing:20px;">
 
+<h2 th:text="${heading}"style="text-align:center;">Default Heading</h2>
 
-<div>
+<div style="text-align:center;">
     <a class="text-muted">
         or <a class="ml-2"href="/user/login">login</a> if you already have an account.</a>
-    </a>
 </div>
-<br>
-<div class="container-fluid">
 
-<form th:object="${register}" method="post">
+<div class="container-fluid"style="display:block;">
+
+<form th:object="${register}" method="post"style="width:800px;">
     <div class="form-group">
     <input class="form-control"name="username" placeholder="Enter a username"th:field="*{username}"style="color:black;text-align:center;">
     <span th:errors="*{username}" class="error"></span>
@@ -38,9 +38,9 @@
     </div>
 
 </form>
-
+</div>
+</div>
 <footer th:replace="fragments :: footer"></footer>
 
-</div>
 </html>
 

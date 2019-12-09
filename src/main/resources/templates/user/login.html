@@ -2,39 +2,42 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 <header th:replace="fragments :: header"></header>
-
 <body th:replace="fragments :: body"></body>
 <h2 th:replace="fragments :: title"></h2>
 <h1 th:text="${title}">Default Title</h1>
+<div style="border-style:solid;border-color:aqua;border-width:2px;border-spacing:20px;">
 
-
-
-<div>
+<h2 style="text-align:center;"th:text="${heading}">Default Heading</h2>
+<div style="text-align:center">
     <a class="text-muted">
-        or register<a class="ml-2"href="/user/register"> here.</a>
-    </a>
-</div>
-<br>
-
-<div class="container-fluid">
-<form th:object="${login}" method="post">
-    <div class="form-group">
-<input class="form-control"name="username"placeholder="Enter your username"style="text-align:center;"th:field="*{username}">
-<span th:errors="*{username}" class="error"></span>
-    </div>
-
-    <div class="form-group">
-<input class="form-control"type="password" name="password"placeholder="Enter your password"style="text-align:center;"th:field="*{password}">
-<span th:errors="*{password}" class="error"></span>
-    </div>
-
-    <div style="text-align:center;">
-<input type="submit"value="Log In"class="brk-btn">
-    </div>
-</form>
+        or <a class="ml-2"href="/user/register">register</a> for an account. </a>
 </div>
 
-<footer th:replace="fragments :: footer"></footer>
+
+<div class="container-fluid"style="display:block;">
+
+    <form th:object="${login}" method="post"style="width:800px;">
+        <div class="form-group">
+            <input class="form-control"name="username" placeholder="Enter a username"th:field="*{username}"style="color:black;text-align:center;">
+            <span th:errors="*{username}" class="error"></span>
+        </div>
+
+        <div class="form-group">
+
+            <input class="form-control"name="password"type="password" placeholder="Enter a password"th:field="*{password}"style="color:black;text-align:center;">
+            <span th:errors="*{password}" class="error"></span>
+        </div>
+
+
+<!--        <div style="text-align:center;">-->
+        <center>
+            <input type="submit"value="Login"class="brk-btn">
+        </center>
+
+    </form>
+</div>
+</div>
+    <footer th:replace="fragments :: footer"></footer>
+
 
 </html>
-

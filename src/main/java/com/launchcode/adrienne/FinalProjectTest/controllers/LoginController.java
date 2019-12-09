@@ -18,7 +18,7 @@ public class LoginController extends MainController {
 @RequestMapping(value = "login", method = RequestMethod.GET)
 public String login(Model model) {
         model.addAttribute(new Login());
-        model.addAttribute("title", "Log In");
+        model.addAttribute("heading", "Log In");
         return "user/login";
         }
 

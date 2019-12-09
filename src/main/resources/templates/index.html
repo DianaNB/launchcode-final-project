@@ -6,7 +6,7 @@
 
 <h1 th:text="${title}">Default Title</h1>
 
-<h2 style="font-size:30px;">View by category:</h2>
+<h1>View posts by category:</h1>
 
 
 <!--<i th:unless="${post} and ${post.size()}">No posts yet :( </i>-->
@@ -21,30 +21,60 @@
     <div title="Ball Python">
     <div class="row">
     <div class="col-xs-6 hvr-float-shadow">
+        <h2>Pythons</h2>
         <a href ="posts/posts-in-category"><img src="/images/python.jpg"class="img-responsive thick-green-border"></a>
+        <div class="col text">
+            Crema wings, kopi-luwak macchiato ut, turkish eu, black doppio organic milk viennese dark coffee extraction grounds cream, crema café au lait cortado mug latte decaffeinated foam. In acerbic bar milk black ut mocha doppio caramelization, extraction mazagran, milk a carajillo et aged galão saucer, coffee variety crema single shot steamed. Blue mountain decaffeinated grounds, to go, fair trade, trifecta coffee plunger pot fair trade french press mazagran, chicory ut viennese carajillo irish. At eu decaffeinated roast cup galão et sweet aroma brewed turkish chicory half and half dark cinnamon eu qui crema. Extraction, brewed cultivar, sweet, half and half, barista americano, body, aroma, plunger pot fair trade crema body ristretto brewed.
+        </div>
     </div>
     </div>
     </div>
+
+
 <div title="Boa Constrictor">
     <div class="row">
     <div class="col-xs-6 hvr-float-shadow">
+        <h2>Boa Constrictors</h2>
 <!--        th:each="post : ${post}"-->
 <!--        th:each="snake : ${ T(com.launchcode.adrienne.FinalProjectTest.models.Snake).values()}"-->
         <a href ="@{post.snake.category}"><img src="/images/boa3.jpg"class="img-responsive thick-green-border"></a>
+        <div class="col text">
+            Crema wings, kopi-luwak macchiato ut, turkish eu, black doppio organic milk viennese dark coffee extraction grounds cream, crema café au lait cortado mug latte decaffeinated foam. In acerbic bar milk black ut mocha doppio caramelization, extraction mazagran, milk a carajillo et aged galão saucer, coffee variety crema single shot steamed. Blue mountain decaffeinated grounds, to go, fair trade, trifecta coffee plunger pot fair trade french press mazagran, chicory ut viennese carajillo irish. At eu decaffeinated roast cup galão et sweet aroma brewed turkish chicory half and half dark cinnamon eu qui crema. Extraction, brewed cultivar, sweet, half and half, barista americano, body, aroma, plunger pot fair trade crema body ristretto brewed.
+        </div>
     </div>
     </div>
-</div>
+    </div>
+
 
 <div title="Indigo Snake">
     <div class="row">
     <div class="col-xs-6 hvr-float-shadow">
+        <h2>Colubrids</h2>
         <a href ="/posts/list"><img src="/images/kingsnake.jpg"class="img-responsive thick-green-border"></a>
+        <div class="col text">
+            Crema wings, kopi-luwak macchiato ut, turkish eu, black doppio organic milk viennese dark coffee extraction grounds cream, crema café au lait cortado mug latte decaffeinated foam. In acerbic bar milk black ut mocha doppio caramelization, extraction mazagran, milk a carajillo et aged galão saucer, coffee variety crema single shot steamed. Blue mountain decaffeinated grounds, to go, fair trade, trifecta coffee plunger pot fair trade french press mazagran, chicory ut viennese carajillo irish. At eu decaffeinated roast cup galão et sweet aroma brewed turkish chicory half and half dark cinnamon eu qui crema. Extraction, brewed cultivar, sweet, half and half, barista americano, body, aroma, plunger pot fair trade crema body ristretto brewed.
+        </div>
     </div>
     </div>
-</div>
-    <style>
+    </div>
 
-        .hvr-float-shadow {
+
+    <style>
+    h1 {
+    font-family: 'Barriecito', cursive;
+    }
+
+    h2 {
+    font-family: 'Finger Paint', cursive;
+    text-align: center;
+    }
+    .text {
+    font-family: 'Waiting for the Sunrise', cursive;
+    font-size: 20px;
+
+    }
+
+    .hvr-float-shadow {
   display: inline-block;
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
@@ -96,13 +126,7 @@
 
 
 </section>
-<p>Bla bla bla bla</p>
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-        <p class="card-text">Snake</p>
-    </div>
-</div>
+
 
 <br>
 <br>
