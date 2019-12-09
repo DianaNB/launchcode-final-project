@@ -12,21 +12,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("user")
 public class LoginController extends MainController {
+@RequestMapping(value = "/", method = RequestMethod.GET)
+public String index(Model model) {
+        model.addAttribute("heading", "View Post By Category:");
+        return "index";
+}
 
-@RequestMapping(value = "login", method = RequestMethod.GET)
+@RequestMapping(value = "/login", method = RequestMethod.GET)
 public String login(Model model) {
         model.addAttribute(new Login());
         model.addAttribute("heading", "Log In");
-        return "user/login";
+        return "login";
         }
 
 @RequestMapping(value = "/login", method = RequestMethod.POST)
 public String login(@ModelAttribute @Valid Login form, Errors errors, HttpServletRequest request) {
 
         if (errors.hasErrors()) {
-        return "user/login";
+        return "login";
         }
 
         User user = userDao.findByUsername(form.getUsername());
@@ -34,12 +38,12 @@ public String login(@ModelAttribute @Valid Login form, Errors errors, HttpServle
 
         if (user == null) {
         errors.rejectValue("username", "user.invalid", "The given username does not exist");
-        return "user/login";
+        return "login";
         }
 
         if (!user.isMatchingPassword(password)) {
         errors.rejectValue("password", "password.invalid", "Invalid password");
-        return "user/login";
+        return "login";
         }
 
         setUserInSession(request.getSession(), user);
@@ -47,7 +51,7 @@ public String login(@ModelAttribute @Valid Login form, Errors errors, HttpServle
         return "redirect:/";
         }
 
-@RequestMapping(value = "/", method = RequestMethod.GET)
+@RequestMapping(value = "/logout", method = RequestMethod.GET)
 public String logout(HttpServletRequest request){
         request.getSession().invalidate();
         return "redirect:/";

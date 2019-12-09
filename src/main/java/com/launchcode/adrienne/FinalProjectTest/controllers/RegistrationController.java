@@ -17,14 +17,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("user")
 public class RegistrationController extends MainController {
 
     @RequestMapping(value = "register", method = RequestMethod.GET)
     public String registerDisplay(Model model) {
         model.addAttribute(new Register());
         model.addAttribute("heading", "Register");
-        return "user/register";
+        return "register";
     }
 
     @RequestMapping(value = "register", method = RequestMethod.POST)
@@ -35,18 +34,18 @@ public class RegistrationController extends MainController {
         }
         if (errors.hasErrors()) {
             model.addAttribute("heading", "Register");
-            return "user/register";
+            return "register";
         }
         if (!registerFormData.getPassword().equals(registerFormData.getConfirmPassword())) {
             errors.rejectValue("password", "password.invalid", "Passwords do not match");
-            return "user/register";
+            return "register";
         }
 
         User existingUser = userDao.findByUsername(registerFormData.getUsername());
 
         if (existingUser != null) {
             errors.rejectValue("username", "username.alreadyexists", "A user with that username already exists");
-            return "user/register";
+            return "register";
         }
 
         User user = new User(registerFormData.getUsername(), registerFormData.getPassword());

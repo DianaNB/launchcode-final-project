@@ -67,7 +67,7 @@
 
     <div class="form-group">
         <label th:for="description">Description:</label>
-        <textarea class="form-control description"th:field="*{description}"placeholder="Tell us about your pet snake!"></textarea>
+        <textarea class="form-control description"th:field="*{description}"placeholder="Talk about your pet snake!"></textarea>
         <span th:errors="*{description}" class="error"></span>
 <style>
     ::-webkit-input-placeholder {
@@ -81,7 +81,7 @@
         }
 </style>
     </div>
-
+<!--<input type="hidden"name="userId"th:value="${userId}">-->
 <center>
 <input type="submit"value="Create Post"class="brk-btn">
 </center>
