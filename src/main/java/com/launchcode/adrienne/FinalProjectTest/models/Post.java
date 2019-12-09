@@ -20,14 +20,10 @@ public class Post {
     @NotNull(message = "Please enter an age")
     private int age;
 
-
     private Snake snake;
 
-
     public Post() {
-
     }
-
 
     public Post(int id, @NotNull String snakeName, @NotNull String title, @NotNull String description, @NotNull String sex, @NotNull int age) {
 
@@ -37,9 +33,7 @@ public class Post {
         this.description = description;
         this.sex = sex;
         this.age = age;
-
     }
-
 
     public int getId() {
         return id;

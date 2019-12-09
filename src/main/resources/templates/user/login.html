@@ -14,8 +14,9 @@
         or register<a class="ml-2"href="/user/register"> here.</a>
     </a>
 </div>
+<br>
 
-<div class="container">
+<div class="container-fluid">
 <form th:object="${login}" method="post">
     <div class="form-group">
 <input class="form-control"name="username"placeholder="Enter your username"style="text-align:center;"th:field="*{username}">
@@ -29,10 +30,7 @@
 
     <div style="text-align:center;">
 <input type="submit"value="Log In"class="brk-btn">
-</div>
-
-
-
+    </div>
 </form>
 </div>
 

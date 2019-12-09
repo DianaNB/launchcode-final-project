@@ -2,6 +2,7 @@ package com.launchcode.adrienne.FinalProjectTest.controllers;
 
 
 import com.launchcode.adrienne.FinalProjectTest.models.Post;
+import com.launchcode.adrienne.FinalProjectTest.models.Snake;
 import com.launchcode.adrienne.FinalProjectTest.models.data.PostDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -36,11 +37,8 @@ public class PostController extends MainController {
     }
 
     @RequestMapping(value="create-post",method = RequestMethod.POST)
-    public String addPost(Model model, @ModelAttribute @Valid Post newPost, BindingResult bindingResult,
+    public String addPost(Model model, @ModelAttribute @Valid Post newPost,
                           Errors errors) {
-        if (bindingResult.hasErrors()) {
-            System.out.println("ERROR in post Form");
-        }
 
         if (errors.hasErrors()) {
             model.addAttribute("heading", "Add New Post");
@@ -59,5 +57,12 @@ public class PostController extends MainController {
         return "posts/view";
     }
 
+
+    @RequestMapping(value = "posts-in-category", method = RequestMethod.GET)
+    public String listByCategory(Model model, Snake snake, Post post) {
+//        model.addAttribute("snake", postDao.findByCategory(post.getSnake().getCategory()));
+        model.addAttribute("heading", "Posts in Category: " + snake.getCategory());
+        return "posts/posts-in-category";
+    }
 
 }

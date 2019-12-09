@@ -10,13 +10,12 @@
 
 
 <h2 th:text="${heading}">Default Heading</h2>
-<i th:unless="${post} and ${post.size()}">No posts yet :( </i>
 
 <div class="container-fluid">
-<ul class="list-group">
-    <li th:each="post : ${post}"class="list-group-item-dark">
-        <a th:href="'/posts/view/' + ${post.id}" th:text="${post.title}"style="font-size:25px; "></a></li>
-</ul>
+    <ul class="list-group">
+        <li th:each="post : ${snake}"class="list-group-item-dark">
+            <a th:href="'/posts/view/' + ${post.id}" th:text="${post.title}"th:value="${snake.category.Python}"style="font-size:25px; "></a></li>
+    </ul>
 </div>
 
 

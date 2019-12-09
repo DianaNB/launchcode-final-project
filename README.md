@@ -10,8 +10,9 @@ My project will be a web page designed for reptile enthusiasts where they can li
 * Java
 * Spring Boot
 * Bootstrap
+* jQuery
 * HTML5/CSS3
 * mySQL
 ### Necessary To Learn
-I have a lot of research to do. I have to learn how to better implement Bootstrap (and CSS), how to use mySQL to store user information as well as website information, and expand my overall knowledge of Java and Spring Boot. I also might need to implement more technologies, and may or may not add more features later such as the ability to delete posts. All of these I must do research on.
+I have a lot of research to do. I will have to learn how to better implement Bootstrap (and CSS), how to use mySQL to store user information as well as website information, and expand my overall knowledge of Java and Spring Boot. I also might need to implement more technologies, and may or may not add more features later such as the ability to delete posts. All of these I must do research on.
 [Trello project tracker](https://trello.com/b/bQPllG4g/project)

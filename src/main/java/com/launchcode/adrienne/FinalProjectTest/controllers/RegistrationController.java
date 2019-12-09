@@ -28,8 +28,8 @@ public class RegistrationController extends MainController {
     }
 
     @RequestMapping(value = "register", method = RequestMethod.POST)
-    public String register(Model model, @ModelAttribute @Valid Register form, BindingResult bindingResult,
-                           Errors errors, HttpServletRequest request) {
+    public String register(@ModelAttribute @Valid Register registerFormData, BindingResult bindingResult,
+                           Errors errors, Model model, HttpServletRequest request) {
         if (bindingResult.hasErrors()) {
             System.out.println("ERROR in user Form");
         }
@@ -37,14 +37,19 @@ public class RegistrationController extends MainController {
             model.addAttribute("heading", "Register");
             return "user/register";
         }
-        User existingUser = userDao.findByUsername(form.getUsername());
+        if (!registerFormData.getPassword().equals(registerFormData.getConfirmPassword())) {
+            errors.rejectValue("password", "password.invalid", "Passwords do not match");
+            return "user/register";
+        }
+
+        User existingUser = userDao.findByUsername(registerFormData.getUsername());
 
         if (existingUser != null) {
             errors.rejectValue("username", "username.alreadyexists", "A user with that username already exists");
             return "user/register";
         }
 
-        User user = new User(form.getUsername(), form.getPassword());
+        User user = new User(registerFormData.getUsername(), registerFormData.getPassword());
         userDao.save(user);
         setUserInSession(request.getSession(), user);
 

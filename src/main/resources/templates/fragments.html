@@ -16,13 +16,18 @@
 
 <header th:fragment="header">
     <div class="container-fluid">
-        <br>
-        <br>
-        <h2 id="demo1"style="font-size:4vw;font-family: 'Nosifer', cursive;">Title Of My Project</h2>
+<!--        <div class="col">-->
+<!--        <img class="img-responsive"src="/images/noodle.jpg"style="position:relative;text-align:left;">-->
+<!--        <div class="col-xs-6 hvr-float-shadow">-->
+<!--            <a href ="posts/posts-in-category"><img src="/images/Blueeyed-Lucy-Blog.jpg"style="position:fixed;width:282.5px,height:283.5px;"class="img-responsive thick-green-border"></a>-->
+<!--        </div>-->
+    </div>
+    </div>
+        <h2 id="demo1"style="font-size:4vw;font-family: 'Vast Shadow', cursive;position:absolute; left:180px; top:50px;">Noodle</h2>
         <script type="text/javascript" src="https://rawgit.com/peterhry/CircleType/master/dist/circletype.min.js"></script>
         <script>
          const circleType = new CircleType(document.getElementById('demo1'));
-         circleType.radius(500);
+         circleType.radius(380);
          $('#demo1').circleType({fluid:true});
 updateRadius();
       </script>
@@ -32,13 +37,13 @@ updateRadius();
 <!--        font-family: 'Frijole', cursive;-->
 <!--        font-family: 'Nosifer', cursive;-->
 <center>
-    <img class="img-responsive thick-green-border" src="/images/ballpython1.jpg" alt="Ball Python."style="position:relative;height:237.5px;width:262.5px;bottom:120px;">
+    <img class="img-responsive thick-green-border" src="/images/ballpython1.jpg" alt="Ball Python."style="position:relative;height:316.7px;width:350px;bottom:5px;">
 </center>
 
 
     <style>
 .thick-green-border{
-    border-color: #eee;
+    border-color: white;
     border-width: 10px;
     border-style: solid;
     border-radius: 50%;
@@ -91,15 +96,21 @@ updateRadius();
 
 
 
-        <div class="col-xs-4 mx-auto" style="font-size:15px;position:absolute; left:180px; top:20px;">
+        <div class="col-xs-4 mx-auto" style="font-size:15px;position:absolute; left:10px; top:20px;">
             <a class="brk-btn1"href="/user/register">Register</a>
             <a class="brk-btn1"href="/user/login">Log In</a>
-            <a class="brk-btn1" th:if="${userId}" href="/user/logout">Log Out</a>
+            <a class="brk-btn1" th:if="${userId}" href="/">Log Out</a>
             <br>
             <br>
-            <a th:if="${userId}">Welcome!</a>
-<!--            <a th:unless="${userId}">You aren't signed in :(</a>-->
+
+<!--            <a th:if="${userId}">Welcome!</a>-->
+<!--            <div th:if="${userId}">-->
+<!--                <a th:if="${userId}" th:text="${'Welcome ' + user.username + '!'}"></a>-->
+<!--            </div>-->
+
+                        <a th:unless="${userId}">You aren't signed in :(</a>
         </div>
+</div>
 
 
 

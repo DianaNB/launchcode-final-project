@@ -47,7 +47,7 @@ public String login(@ModelAttribute @Valid Login form, Errors errors, HttpServle
         return "redirect:/";
         }
 
-@RequestMapping(value = "/user/logout", method = RequestMethod.GET)
+@RequestMapping(value = "/", method = RequestMethod.GET)
 public String logout(HttpServletRequest request){
         request.getSession().invalidate();
         return "redirect:/";

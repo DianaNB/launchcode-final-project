@@ -32,12 +32,5 @@ public enum Snake {
     Snake(String name, String category) {
             this.name = name;
             this.category = category;
-
-
-//        for (Snake : Snake.values()) {
-
-//            add the snake name to your list
-//        }
-
     }
 }

@@ -1,28 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-
-
-
 <header th:replace="fragments :: header"></header>
-
-<!--<section style="right:80px,top:20px;">-->
-<!--<div th:if="${userId}">-->
-<!--    <a>Welcome!</a></div>-->
-<!--<div th:unless="${userId}">-->
-<!--    <a>You aren't signed in :(</a>-->
-<!--</div>-->
-<!--</section>-->
-
 <body th:replace="fragments :: body"></body>
 
 <h1 th:text="${title}">Default Title</h1>
-<!--<td>-->
-<!--    <span th:if="${teacher.gender == 'F'}">Female</span>-->
-<!--    <span th:unless="${teacher.gender == 'F'}">Male</span>-->
-<!--</td>-->
-<!--<nav th:replace="fragments :: navigation"></nav>-->
-<!--<nav th:replace="fragments :: navigation2"></nav>-->
+
 <h2 style="font-size:30px;">View by category:</h2>
 
 
@@ -31,23 +14,34 @@
 <br>
 <br>
 <section class="container-fluid">
-
-
 <!--    <div class="col-xs-4">-->
 <!--        <h2><a href ="#"class="text-primary mx-auto text-center"style="white-space: nowrap;">Pythons</a></h2>-->
 <!--        <img class="img-responsive thick-green-border" src="python.jpg" alt="Ball Python."style="position:relative;">-->
 <!--    </div>-->
-    <div class="col-xs-4 hvr-float-shadow">
-        <a href ="/posts/list"><img src="python.jpg"class="img-responsive thick-green-border"></a>
+    <div title="Ball Python">
+    <div class="row">
+    <div class="col-xs-6 hvr-float-shadow">
+        <a href ="posts/posts-in-category"><img src="/images/python.jpg"class="img-responsive thick-green-border"></a>
     </div>
+    </div>
+    </div>
+<div title="Boa Constrictor">
+    <div class="row">
+    <div class="col-xs-6 hvr-float-shadow">
+<!--        th:each="post : ${post}"-->
+<!--        th:each="snake : ${ T(com.launchcode.adrienne.FinalProjectTest.models.Snake).values()}"-->
+        <a href ="@{post.snake.category}"><img src="/images/boa3.jpg"class="img-responsive thick-green-border"></a>
+    </div>
+    </div>
+</div>
 
-    <div class="col-xs-4 hvr-float-shadow">
-        <a href ="/posts/list"><img src="images/boa3.jpg"class="img-responsive thick-green-border"></a>
+<div title="Indigo Snake">
+    <div class="row">
+    <div class="col-xs-6 hvr-float-shadow">
+        <a href ="/posts/list"><img src="/images/kingsnake.jpg"class="img-responsive thick-green-border"></a>
     </div>
-
-    <div class="col-xs-4 hvr-float-shadow">
-        <a href ="/posts/list"><img src="leur.jpg"class="img-responsive thick-green-border"></a>
     </div>
+</div>
     <style>
 
         .hvr-float-shadow {
@@ -102,6 +96,14 @@
 
 
 </section>
+<p>Bla bla bla bla</p>
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <p class="card-text">Snake</p>
+    </div>
+</div>
+
 <br>
 <br>
 <br>
