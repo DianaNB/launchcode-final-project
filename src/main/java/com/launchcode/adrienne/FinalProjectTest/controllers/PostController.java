@@ -5,6 +5,7 @@ import com.launchcode.adrienne.FinalProjectTest.models.Post;
 import com.launchcode.adrienne.FinalProjectTest.models.Snake;
 import com.launchcode.adrienne.FinalProjectTest.models.data.PostDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.util.StreamUtils;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -57,11 +58,16 @@ public class PostController extends MainController {
     }
 
 
-    @RequestMapping(value = "posts-in-category", method = RequestMethod.GET)
-    public String listByCategory(Model model, Snake snake, Post post) {
-//        model.addAttribute("snake", postDao.findByCategory(post.getSnake().getCategory()));
-        model.addAttribute("heading", "Posts in Category: " + snake.getCategory());
+//    @RequestMapping(value = "posts-in-category", method = RequestMethod.GET)
+//    public String listByCategory(Model model, Snake snake, Post post) {
+////        model.addAttribute("snake", postDao.findByCategory(post.getSnake().getCategory()));
+//        model.addAttribute("heading", "Posts in Category: " + snake.getCategory());
+//        return "posts/posts-in-category";
+
+    @RequestMapping(value = "posts-in-category{category}", method = RequestMethod.GET)
+    public String listByCategory(Model model, @PathVariable String category) {
+        model.addAttribute("post", StreamUtils.createStreamFromIterator(postDao.findAll().iterator()).filter(a -> category.equals(a.getSnake().getCategory())));
+        model.addAttribute("heading", "Posts in Category: " + category);
         return "posts/posts-in-category";
     }
-
 }

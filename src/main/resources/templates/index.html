@@ -15,10 +15,11 @@
     <div class="row"style="margin:-20px;">
     <div class="col-xs-6 hvr-float-shadow">
         <h2>Pythons</h2>
-        <a href ="posts/posts-in-category"><img src="/images/python.jpg"class="img-responsive thick-green-border"></a>
-        <div class="col text">
-            Crema wings, kopi-luwak macchiato ut, turkish eu, black doppio organic milk viennese dark coffee extraction grounds cream, crema café au lait cortado mug latte decaffeinated foam. In acerbic bar milk black ut mocha doppio caramelization, extraction mazagran, milk a carajillo et aged galão saucer, coffee variety crema single shot steamed. Blue mountain decaffeinated grounds, to go, fair trade, trifecta coffee plunger pot fair trade french press mazagran, chicory ut viennese carajillo irish. At eu decaffeinated roast cup galão et sweet aroma brewed turkish chicory half and half dark cinnamon eu qui crema. Extraction, brewed cultivar, sweet, half and half, barista americano, body, aroma, plunger pot fair trade crema body ristretto brewed.
-        </div>
+        <a href ="posts/posts-in-category/{category}"><img src="/images/python.jpg"alt="Ball Python"class="img-responsive img-border"></a>
+
+        <span class="col text">
+            (info on pythons here)Crema wings, kopi-luwak macchiato ut, turkish eu, black doppio organic milk viennese dark coffee extraction grounds cream, crema café au lait cortado mug latte decaffeinated foam. In acerbic bar milk black ut mocha doppio caramelization, extraction mazagran, milk a carajillo et aged galão saucer, coffee variety crema single shot steamed. Blue mountain decaffeinated grounds, to go, fair trade, trifecta coffee plunger pot fair trade french press mazagran, chicory ut viennese carajillo irish. At eu decaffeinated roast cup galão et sweet aroma brewed turkish chicory half and half dark cinnamon eu qui crema. Extraction, brewed cultivar, sweet, half and half, barista americano, body, aroma, plunger pot fair trade crema body ristretto brewed.
+        </span>
     </div>
     </div>
     </div>
@@ -28,11 +29,9 @@
     <div class="row">
     <div class="col-xs-6 hvr-float-shadow">
         <h2>Boa Constrictors</h2>
-<!--        th:each="post : ${post}"-->
-<!--        th:each="snake : ${ T(com.launchcode.adrienne.FinalProjectTest.models.Snake).values()}"-->
-        <a href ="@{post.snake.category}"><img src="/images/boa3.jpg"class="img-responsive thick-green-border"></a>
+        <a href ="posts/posts-in-category/{category}"><img src="/images/boa3.jpg"alt="Boa Constrictor"class="img-responsive img-border"></a>
         <div class="col text">
-            Crema wings, kopi-luwak macchiato ut, turkish eu, black doppio organic milk viennese dark coffee extraction grounds cream, crema café au lait cortado mug latte decaffeinated foam. In acerbic bar milk black ut mocha doppio caramelization, extraction mazagran, milk a carajillo et aged galão saucer, coffee variety crema single shot steamed. Blue mountain decaffeinated grounds, to go, fair trade, trifecta coffee plunger pot fair trade french press mazagran, chicory ut viennese carajillo irish. At eu decaffeinated roast cup galão et sweet aroma brewed turkish chicory half and half dark cinnamon eu qui crema. Extraction, brewed cultivar, sweet, half and half, barista americano, body, aroma, plunger pot fair trade crema body ristretto brewed.
+            (info on boas here)Crema wings, kopi-luwak macchiato ut, turkish eu, black doppio organic milk viennese dark coffee extraction grounds cream, crema café au lait cortado mug latte decaffeinated foam. In acerbic bar milk black ut mocha doppio caramelization, extraction mazagran, milk a carajillo et aged galão saucer, coffee variety crema single shot steamed. Blue mountain decaffeinated grounds, to go, fair trade, trifecta coffee plunger pot fair trade french press mazagran, chicory ut viennese carajillo irish. At eu decaffeinated roast cup galão et sweet aroma brewed turkish chicory half and half dark cinnamon eu qui crema. Extraction, brewed cultivar, sweet, half and half, barista americano, body, aroma, plunger pot fair trade crema body ristretto brewed.
         </div>
     </div>
     </div>
@@ -41,11 +40,11 @@
 
 <div title="Indigo Snake">
     <div class="row">
-    <div class="col-xs-6 hvr-float-shadow1">
+    <div class="col-xs-6 hvr-float-shadow">
         <h2>Colubrids</h2>
-        <a href ="/posts/list"><img src="/images/kingsnake.jpg"class="img-responsive thick-green-border"></a>
+        <a href ="posts/posts-in-category/{category}"><img src="/images/kingsnake.jpg"alt="Indigo Snake"class="img-responsive img-border"></a>
         <div class="col text">
-            Crema wings, kopi-luwak macchiato ut, turkish eu, black doppio organic milk viennese dark coffee extraction grounds cream, crema café au lait cortado mug latte decaffeinated foam. In acerbic bar milk black ut mocha doppio caramelization, extraction mazagran, milk a carajillo et aged galão saucer, coffee variety crema single shot steamed. Blue mountain decaffeinated grounds, to go, fair trade, trifecta coffee plunger pot fair trade french press mazagran, chicory ut viennese carajillo irish. At eu decaffeinated roast cup galão et sweet aroma brewed turkish chicory half and half dark cinnamon eu qui crema. Extraction, brewed cultivar, sweet, half and half, barista americano, body, aroma, plunger pot fair trade crema body ristretto brewed.
+            (info on colubrids here) Crema wings, kopi-luwak macchiato ut, turkish eu, black doppio organic milk viennese dark coffee extraction grounds cream, crema café au lait cortado mug latte decaffeinated foam. In acerbic bar milk black ut mocha doppio caramelization, extraction mazagran, milk a carajillo et aged galão saucer, coffee variety crema single shot steamed. Blue mountain decaffeinated grounds, to go, fair trade, trifecta coffee plunger pot fair trade french press mazagran, chicory ut viennese carajillo irish. At eu decaffeinated roast cup galão et sweet aroma brewed turkish chicory half and half dark cinnamon eu qui crema. Extraction, brewed cultivar, sweet, half and half, barista americano, body, aroma, plunger pot fair trade crema body ristretto brewed.
         </div>
     </div>
     </div>
@@ -64,7 +63,6 @@
     .text {
     font-family: 'Waiting for the Sunrise', cursive;
     font-size: 20px;
-
     }
 
     .hvr-float-shadow {
@@ -109,47 +107,7 @@
   /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
 }
 
-  .hvr-float-shadow1 {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  position: relative;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-}
-.hvr-float-shadow1:before {
-  pointer-events: none;
-  position: absolute;
-  z-index: -1;
-  content: '';
-  top: 100%;
-  left: 5%;
-  height: 10px;
-  width: 90%;
-  opacity: 0;
-  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
-  /* W3C */
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform, opacity;
-  transition-property: transform, opacity;
-}
-.hvr-float-shadow1:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
-  -webkit-transform: translateY(-10px);
-  transform: translateY(-10px);
-  /* move the element up by 5px */
-}
-.hvr-float-shadow1:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {
-  opacity: 1;
-  -webkit-transform: translateY(10px);
-  transform: translateY(10px);
-  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
-}
+
     </style>
 </section>
 

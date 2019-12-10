@@ -13,14 +13,13 @@
 
 <div class="container-fluid">
     <ul class="list-group">
-        <li th:each="post : ${snake}"class="list-group-item-dark">
-            <a th:href="'/posts/view/' + ${post.id}" th:text="${post.title}"th:value="${snake.category.Python}"style="font-size:25px; "></a></li>
+        <li th:each="post : ${post}"class="list-group-item-dark">
+            <a th:href="'/posts/view/' + ${post.id}" th:text="${post.title}"th:value="${post.category}"style="font-size:25px; "></a></li>
     </ul>
 </div>
 
 
 
 <footer th:replace="fragments :: footer"></footer>
-</body>
 </html>
 

@@ -6,8 +6,8 @@
 <h2 th:replace="fragments :: title"></h2>
 <h1 th:text="${title}">Default Title</h1>
 
-<div style="border-style:solid;border-color:aqua;border-width:2px;border-spacing:20px;">
-<h2 th:text="${heading}"style="text-align:center;">Default Heading</h2>
+<div class="border">
+<h2 class="add-title"th:text="${heading}">Default Heading</h2>
 
 <div class="container-fluid"style="display:block;">
 <form method="post"th:object="${post}"style="width:800px;">
@@ -77,11 +77,14 @@
         cols:40;
         rows:40;
         wrap:soft;
-        max-length:300;
         }
+         .add-title {
+        font-family: 'Barriecito', cursive;
+        text-align: center;
+    }
 </style>
     </div>
-<!--<input type="hidden"name="userId"th:value="${userId}">-->
+<input type="hidden"name="userId"th:value="${userId}">
 <center>
 <input type="submit"value="Create Post"class="brk-btn">
 </center>

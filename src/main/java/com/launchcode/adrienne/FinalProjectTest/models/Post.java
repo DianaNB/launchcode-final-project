@@ -1,6 +1,8 @@
 package com.launchcode.adrienne.FinalProjectTest.models;
 
 import javax.persistence.*;
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -10,15 +12,20 @@ public class Post {
     @Id
     @GeneratedValue
     private int id;
-    @NotNull(message = "Please enter a name")
+
+    @NotBlank(message = "Please enter a name")
     private String snakeName;
-    @NotNull(message = "Please enter a title")
+
+    @NotBlank(message = "Please enter a title")
     private String title;
-    @NotNull(message = "Please enter a description")
+
+    @NotBlank(message = "Please enter a description")
+    @Size(max =65535)
     private String description;
-    @NotNull(message = "Please enter male or female")
+
+    @NotBlank(message = "Please enter male or female")
     private String sex;
-    @NotNull(message = "Please enter an age")
+
     private int age;
 
     private Snake snake;
@@ -26,7 +33,7 @@ public class Post {
     public Post() {
     }
 
-    public Post(int id, @NotNull String snakeName, @NotNull String title, @NotNull String description, @NotNull String sex, @NotNull int age) {
+    public Post(int id, String snakeName, String title, String description, String sex, int age) {
 
         this.id = id;
         this.snakeName = snakeName;

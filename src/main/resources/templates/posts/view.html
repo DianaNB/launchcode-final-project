@@ -10,6 +10,9 @@
     <div class="border">
     <div class="container-fluid posts">
         <h2 th:text="${post.title}"></h2>
+        <span th:text="${'By: ' + user.username}"></span>
+        <br>
+        <br>
 
         <div>
             <label th:for="snakeName">Name:</label>
@@ -60,7 +63,7 @@
     }
     .posts {
     display:block;
-    text-align:center;
+    text-align:left;
     width:800px;
     color:white;
     font-size:25px;
@@ -69,33 +72,6 @@
     color:white;
     }
 </style>
-
-<!--<h2 th:text="${post.title}"></h2>-->
-
-<!--<div>-->
-<!--<label th:for="snakeName">Name:</label>-->
-<!--<a th:text="*{post.snakeName}"></a>-->
-<!--</div>-->
-
-<!--<div>-->
-<!--    <label th:for="age">Age:</label>-->
-<!--    <a th:text="*{post.age}"></a>-->
-<!--</div>-->
-
-<!--<div>-->
-<!--    <label th:for="sex">Sex:</label>-->
-<!--    <a th:text="*{post.sex}"></a>-->
-<!--</div>-->
-
-<!--<div>-->
-<!--    <label th:for="snake">Category:</label>-->
-<!--    <a th:text="*{post.snake.name}"></a>-->
-<!--</div>-->
-
-<!--<div>-->
-<!--    <label th:for="description">Description:</label>-->
-<!--    <a th:text="*{post.description}"></a>-->
-<!--</div>-->
 <footer th:replace="fragments :: footer"></footer>
 </html>
 

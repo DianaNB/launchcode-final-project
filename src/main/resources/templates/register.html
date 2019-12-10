@@ -5,9 +5,9 @@
 <body th:replace="fragments :: body"></body>
 <h2 th:replace="fragments :: title"></h2>
 <h1 th:text="${title}">Default Title</h1>
-<div style="border-style:solid;border-color:aqua;border-width:2px;border-spacing:20px;">
+<div class="border">
 
-<h2 th:text="${heading}"style="text-align:center;">Default Heading</h2>
+<h2 class="register-title"th:text="${heading}">Default Heading</h2>
 
 <div style="text-align:center;">
     <a class="text-muted">
@@ -40,6 +40,12 @@
 </form>
 </div>
 </div>
+<style>
+    .register-title {
+    font-family: 'Barriecito', cursive;
+    text-align:center;
+    }
+</style>
 <footer th:replace="fragments :: footer"></footer>
 
 </html>
