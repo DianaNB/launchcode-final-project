@@ -9,8 +9,8 @@
 <div class="border">
 <h2 class="add-title"th:text="${heading}">Default Heading</h2>
 
-<div class="container-fluid"style="display:block;">
-<form method="post"th:object="${post}"style="width:800px;">
+<div class="container-fluid">
+<form method="post"th:object="${post}">
     <div class="form-group">
         <label th:for="title">Title of New Post:</label>
         <input class="form-control"th:field="*{title}">
@@ -47,23 +47,12 @@
 
     <div class="form-group">
         <label th:for="snake">Category:</label>
-        <select th:field="*{snake}"style="color:black;">
+        <select class="enum"th:field="*{snake}">
             <option th:each="snake : ${ T(com.launchcode.adrienne.FinalProjectTest.models.Snake).values()}"
                     th:text="${snake.name}"
                     th:value="${snake}"></option>
         </select>
     </div>
-
-<!--    <div class="form-group">-->
-<!--        <label th:for="snake">Category:</label>-->
-<!--        <select th:field="*{snake}"style="color:black;">-->
-<!--            <option th:each="snake : ${ T(com.launchcode.adrienne.FinalProjectTest.models.Snake).values()}"-->
-<!--                    th:text="${snake.category}"-->
-<!--                    th:value="${snake}"></option>-->
-<!--        </select>-->
-<!--    </div>-->
-
-
 
     <div class="form-group">
         <label th:for="description">Description:</label>
@@ -81,6 +70,16 @@
          .add-title {
         font-family: 'Barriecito', cursive;
         text-align: center;
+    }
+    .enum{
+    font-size:15px;
+    color:black;
+    }
+    .container-fluid{
+    display:block;
+    }
+    form{
+    width:800px;
     }
 </style>
     </div>

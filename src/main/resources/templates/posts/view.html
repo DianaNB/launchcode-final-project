@@ -10,38 +10,37 @@
     <div class="border">
     <div class="container-fluid posts">
         <h2 th:text="${post.title}"></h2>
-        <span th:text="${'By: ' + user.username}"></span>
+<!--        <span th:text="${'By: ' + username}"></span>-->
         <br>
         <br>
-
         <div>
             <label th:for="snakeName">Name:</label>
-            <a th:text="*{post.snakeName}"></a>
+            <span th:text="*{post.snakeName}"></span>
         </div>
 
         <div>
             <label th:for="age">Age:</label>
-            <a th:text="*{post.age}"></a>
+            <span th:text="*{post.age}"></span>
         </div>
 
         <div>
             <label th:for="sex">Sex:</label>
-            <a th:text="*{post.sex}"></a>
+            <span th:text="*{post.sex}"></span>
         </div>
 
         <div>
             <label th:for="snake">Category:</label>
-            <a th:text="*{post.snake.category}"></a>
+            <span th:text="*{post.snake.category}"></span>
         </div>
 
         <div>
             <label th:for="snake">Sub-Category:</label>
-            <a th:text="*{post.snake.name}"></a>
+            <span th:text="*{post.snake.name}"></span>
         </div>
 
         <div class="description">
             <label th:for="description">Description:</label>
-            <a th:text="*{post.description}"></a>
+            <span th:text="*{post.description}"></span>
         </div>
     </div>
 </div>
@@ -50,7 +49,9 @@
     h2{
        font-family: 'Barriecito', cursive;
        text-align: center;
-
+    }
+    label{
+    color:aqua;
     }
     .description {
      word-wrap: break-word;
@@ -70,6 +71,10 @@
     }
     a {
     color:white;
+    }
+    p{
+        color:white;
+
     }
 </style>
 <footer th:replace="fragments :: footer"></footer>

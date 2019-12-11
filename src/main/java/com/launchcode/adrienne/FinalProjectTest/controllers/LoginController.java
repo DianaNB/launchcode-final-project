@@ -14,7 +14,7 @@ import javax.validation.Valid;
 public class LoginController extends MainController {
 @RequestMapping(value = "/", method = RequestMethod.GET)
 public String index(Model model) {
-        model.addAttribute("heading", "View Post By Category:");
+        model.addAttribute("heading", "View Posts By Category:");
         return "index";
 }
 
@@ -26,9 +26,10 @@ public String login(Model model) {
         }
 
 @RequestMapping(value = "/login", method = RequestMethod.POST)
-public String login(@ModelAttribute @Valid Login form, Errors errors, HttpServletRequest request) {
+public String login(@ModelAttribute @Valid Login form, Errors errors, HttpServletRequest request,Model model) {
 
         if (errors.hasErrors()) {
+        model.addAttribute("heading", "Log In");
         return "login";
         }
 

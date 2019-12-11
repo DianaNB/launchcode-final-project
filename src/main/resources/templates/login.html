@@ -5,43 +5,56 @@
 <body th:replace="fragments :: body"></body>
 <h2 th:replace="fragments :: title"></h2>
 <h1 th:text="${title}">Default Title</h1>
-<div class="border"style="border-style:solid;border-color:aqua;border-width:2px;border-spacing:20px;">
 
+<div class="border">
 <h2 class="login-title"th:text="${heading}">Default Heading</h2>
-<div style="text-align:center">
-    <a class="text-muted">
-        or <a class="ml-2"href="/register">register</a> for an account. </a>
+<div class="register">
+        or <a class="reg-link"href="/register">register</a> for an account.
 </div>
-
 
 <div class="container-fluid"style="display:block;">
 
     <form th:object="${login}" method="post"style="width:800px;">
         <div class="form-group">
-            <input class="form-control"name="username" placeholder="Enter a username"th:field="*{username}"style="color:black;text-align:center;">
+            <input class="form-control"name="username" placeholder="Enter a username"th:field="*{username}">
             <span th:errors="*{username}" class="error"></span>
         </div>
 
         <div class="form-group">
 
-            <input class="form-control"name="password"type="password" placeholder="Enter a password"th:field="*{password}"style="color:black;text-align:center;">
+            <input class="form-control"name="password"type="password" placeholder="Enter a password"th:field="*{password}">
             <span th:errors="*{password}" class="error"></span>
         </div>
 
-
-<!--        <div style="text-align:center;">-->
         <center>
             <input type="submit"value="Login"class="brk-btn">
         </center>
 
     </form>
+
 </div>
 </div>
+
 <style>
 .login-title{
  font-family: 'Barriecito', cursive;
  text-align:center;
 }
+.form-control{
+    text-align:center;
+    }
+    .register{
+    text-align:center;
+    font-size:15px;
+    }
+    .reg-link{
+    color:aqua;
+    font-size:20px;
+    }
+    .reg-link:hover{
+    color:white;
+    }
+
 </style>
     <footer th:replace="fragments :: footer"></footer>
 

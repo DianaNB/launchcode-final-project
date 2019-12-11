@@ -3,6 +3,7 @@ package com.launchcode.adrienne.FinalProjectTest.controllers;
 
 import com.launchcode.adrienne.FinalProjectTest.models.Post;
 import com.launchcode.adrienne.FinalProjectTest.models.Snake;
+import com.launchcode.adrienne.FinalProjectTest.models.User;
 import com.launchcode.adrienne.FinalProjectTest.models.data.PostDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.StreamUtils;
@@ -44,6 +45,9 @@ public class PostController extends MainController {
             model.addAttribute("heading", "Add New Post");
             return "posts/create-post";
         }
+//        User username = userDao.findById(userId).get();
+//        newPost.set
+//        model.addAttribute("username",userDao.findByUsername(username));
         postDao.save(newPost);
         return "redirect:view/" + newPost.getId();
     }
@@ -53,18 +57,12 @@ public class PostController extends MainController {
     public String viewPost(Model model, @PathVariable int postId) {
         Post post = postDao.findById(postId).get();
         model.addAttribute("post", post);
+//        model.addAttribute("username",userDao.findByUsername(username));
         model.addAttribute("postId", post.getId());
         return "posts/view";
     }
 
-
-//    @RequestMapping(value = "posts-in-category", method = RequestMethod.GET)
-//    public String listByCategory(Model model, Snake snake, Post post) {
-////        model.addAttribute("snake", postDao.findByCategory(post.getSnake().getCategory()));
-//        model.addAttribute("heading", "Posts in Category: " + snake.getCategory());
-//        return "posts/posts-in-category";
-
-    @RequestMapping(value = "posts-in-category{category}", method = RequestMethod.GET)
+    @RequestMapping(value = "posts-in-category/{category}", method = RequestMethod.GET)
     public String listByCategory(Model model, @PathVariable String category) {
         model.addAttribute("post", StreamUtils.createStreamFromIterator(postDao.findAll().iterator()).filter(a -> category.equals(a.getSnake().getCategory())));
         model.addAttribute("heading", "Posts in Category: " + category);

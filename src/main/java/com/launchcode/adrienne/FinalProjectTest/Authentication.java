@@ -19,7 +19,7 @@ public class Authentication extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException {
 
-        List<String> nonAuthPages = Arrays.asList("/", "/login", "/register", "/posts/list", "/posts/view/{postId}","/posts/posts-in-category");
+        List<String> nonAuthPages = Arrays.asList("/", "/login", "/posts/view/**","/register", "/posts/list","/posts/posts-in-category");
 
         // Require sign-in for auth pages
         if (!nonAuthPages.contains(request.getRequestURI())) {

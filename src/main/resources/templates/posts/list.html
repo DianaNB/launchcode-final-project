@@ -12,8 +12,8 @@
 <h2 th:text="${heading}">Default Heading</h2>
 <i th:unless="${post} and ${post.size()}">No posts yet :( </i>
 
-    <div class="container-fluid"style="display:block;width:800px;">
-        <ul class="list-group list-group-flush"style="margin-left:80px; font-size: 20px; line-height: 2;">
+    <div class="container-fluid post-list">
+        <ul>
             <li th:each="post : ${post}">
                 <a class="post-text" th:href="'/posts/view/' + ${post.id}" th:text="${post.title}"></a></li>
         </ul>
@@ -25,14 +25,25 @@
         font-family: 'Barriecito', cursive;
         text-align: center;
     }
-
-
    .post-text {
-   font-family: 'Waiting for the Sunrise', cursive;
    color: white;
    font-size: 25px;
     word-wrap: break-word;
    }
+   .post-text:hover{
+   color:white;
+   }
+   .post-list{
+   display:block;
+   width:800px;
+   }
+   ul{
+   list-style-type:square;
+   font-size:30px;
+   color:aqua;
+   margin-left:40px;
+   }
+
 </style>
 <footer th:replace="fragments :: footer"></footer>
 </html>

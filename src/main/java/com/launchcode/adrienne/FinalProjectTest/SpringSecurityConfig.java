@@ -13,13 +13,13 @@ import org.springframework.web.servlet.resource.PathResourceResolver;
 
 @Configuration
 public class SpringSecurityConfig implements WebMvcConfigurer{
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor( new MappedInterceptor(new String[]{"/**"}, new String[]{"/images/**"}, authentication()) );
-    }
     @Bean
     public Authentication authentication() {
         return new Authentication();
+    }
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor( new MappedInterceptor(new String[]{"/**"}, new String[]{"/images/**"}, authentication()) );
     }
     }
 
