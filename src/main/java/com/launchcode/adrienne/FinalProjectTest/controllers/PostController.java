@@ -9,11 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.StreamUtils;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+import javax.xml.ws.ServiceMode;
 
 
 @Controller
@@ -45,9 +47,6 @@ public class PostController extends MainController {
             model.addAttribute("heading", "Add New Post");
             return "posts/create-post";
         }
-//        User username = userDao.findById(userId).get();
-//        newPost.set
-//        model.addAttribute("username",userDao.findByUsername(username));
         postDao.save(newPost);
         return "redirect:view/" + newPost.getId();
     }
@@ -57,14 +56,13 @@ public class PostController extends MainController {
     public String viewPost(Model model, @PathVariable int postId) {
         Post post = postDao.findById(postId).get();
         model.addAttribute("post", post);
-//        model.addAttribute("username",userDao.findByUsername(username));
         model.addAttribute("postId", post.getId());
         return "posts/view";
     }
 
     @RequestMapping(value = "posts-in-category/{category}", method = RequestMethod.GET)
     public String listByCategory(Model model, @PathVariable String category) {
-        model.addAttribute("post", StreamUtils.createStreamFromIterator(postDao.findAll().iterator()).filter(a -> category.equals(a.getSnake().getCategory())));
+        model.addAttribute("post", StreamUtils.createStreamFromIterator(postDao.findAll().iterator()).filter(a -> category.equals(a.getSnake().getCategory())).iterator());
         model.addAttribute("heading", "Posts in Category: " + category);
         return "posts/posts-in-category";
     }

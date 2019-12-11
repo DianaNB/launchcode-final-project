@@ -1,9 +1,6 @@
 package com.launchcode.adrienne.FinalProjectTest.models;
 
 
-import java.util.List;
-import java.util.stream.Stream;
-
 public enum Snake {
     BALL_PYTHON("Ball Python", "Python"),
     RETICULATED_PYTHON("Reticulated Python", "Python"),
@@ -34,8 +31,6 @@ public enum Snake {
     String category;
 
 
-//StreamUtils.createStreamFromIterator(postDao.findAll().iterator()).filter(a -> category.equals(a.getSnake().getCategory())));
-
     public String getName() {
         return name;
     }
@@ -48,7 +43,4 @@ public enum Snake {
             this.name = name;
             this.category = category;
     }
-//    public static Stream<Snake> createStreamFromIterator() {
-//        return Stream.of(Snake.values());
-//    }
 }

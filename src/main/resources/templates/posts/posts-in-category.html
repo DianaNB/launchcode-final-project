@@ -1,22 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-
 <header th:replace="fragments :: header"></header>
 <body th:replace="fragments :: body"></body>
 <h2 th:replace="fragments :: title"></h2>
 <h1 th:text="${title}">Default Title</h1>
-<h2 th:text="${heading}">Default Heading</h2>
 
-<div class="container-fluid">
-    <ul class="list-group">
-        <li th:each="post : ${category}"class="list-group-item-dark">
-            <a class="post-text" th:href="'/posts/view/' + ${post.id}" th:text="${post.title}"></a></li>
-    </ul>
+<div class="border">
+    <h2 th:text="${heading}">Default Heading</h2>
+
+    <div class="container-fluid post-list">
+        <ul>
+            <li th:each="post : ${post}">
+                <a class="post-text" th:href="'/posts/view/' + ${post.id}" th:text="${post.title}"></a></li>
+        </ul>
+    </div>
 </div>
-<!--StreamUtils.createStreamFromIterator(postDao.findAll().iterator()).filter(a -> category.equals(a.getSnake().getCategory()))-->
+<style>
+    h2 {
+        font-family: 'Barriecito', cursive;
+        text-align: center;
+    }
+   .post-text {
+   color: white;
+   font-size: 25px;
+    word-wrap: break-word;
+   }
+   .post-text:hover{
+   color:white;
+   }
+   .post-list{
+   display:block;
+   width:800px;
+   }
+   ul{
+   list-style-type:square;
+   font-size:30px;
+   color:aqua;
+   margin-left:40px;
+   }
 
-
+</style>
 <footer th:replace="fragments :: footer"></footer>
 </html>
 

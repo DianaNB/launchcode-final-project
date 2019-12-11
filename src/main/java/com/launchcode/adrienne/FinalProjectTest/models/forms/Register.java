@@ -1,7 +1,5 @@
 package com.launchcode.adrienne.FinalProjectTest.models.forms;
 
-import org.springframework.data.annotation.Transient;
-
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 

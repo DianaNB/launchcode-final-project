@@ -1,10 +1,7 @@
 package com.launchcode.adrienne.FinalProjectTest.controllers;
 
 import com.launchcode.adrienne.FinalProjectTest.models.User;
-import com.launchcode.adrienne.FinalProjectTest.models.data.UserDao;
-import com.launchcode.adrienne.FinalProjectTest.models.forms.Login;
 import com.launchcode.adrienne.FinalProjectTest.models.forms.Register;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -55,8 +52,6 @@ public class RegistrationController extends MainController {
         return "redirect:/";
 
     }
-
-
 }
 
 
