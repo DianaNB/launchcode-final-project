@@ -7,6 +7,8 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
@@ -52,9 +54,9 @@ public String login(@ModelAttribute @Valid Login form, Errors errors, HttpServle
         }
 
 @RequestMapping(value = "/logout", method = RequestMethod.GET)
-public String logout(HttpServletRequest request){
+public String logout(HttpServletRequest request, RedirectAttributes redirectAttributes){
         request.getSession().invalidate();
+        redirectAttributes.addFlashAttribute("logout", "You have been logged out");
         return "redirect:/";
         }
-
         }

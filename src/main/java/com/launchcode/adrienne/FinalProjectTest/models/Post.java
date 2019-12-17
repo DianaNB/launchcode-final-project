@@ -1,8 +1,6 @@
 package com.launchcode.adrienne.FinalProjectTest.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -20,7 +18,7 @@ public class Post {
     private String title;
 
     @NotBlank(message = "Please enter a description")
-    @Size(max =65535)
+    @Lob
     private String description;
 
     @NotBlank(message = "Please enter male or female")
@@ -98,4 +96,6 @@ public class Post {
     public void setSnake(Snake snake) {
         this.snake = snake;
     }
+
+
 }

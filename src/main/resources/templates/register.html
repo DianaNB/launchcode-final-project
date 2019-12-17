@@ -13,9 +13,9 @@
         or <a class="log-link"href="/login">login</a> if you already have an account.
 </div>
 
-<div class="container-fluid"style="display:block;">
+<center class="container-fluid block">
 
-<form th:object="${register}" method="post"style="width:800px;">
+<form th:object="${register}" method="post"class="page">
     <div class="form-group">
     <input class="form-control"name="username" placeholder="Enter a username"th:field="*{username}">
     <span th:errors="*{username}" class="error"></span>
@@ -32,14 +32,20 @@
     <span th:errors="*{confirmPassword}" class="error"></span>
             </div>
 
-    <div style="text-align:center;">
+    <center>
 <input type="submit"value="Register"class="brk-btn">
-    </div>
+    </center>
 
 </form>
 </div>
 </div>
 <style>
+.page{
+width:800px;
+}
+.block {
+display:block;
+}
     .register-title {
     font-family: 'Barriecito', cursive;
     text-align:center;

@@ -12,9 +12,9 @@
         or <a class="reg-link"href="/register">register</a> for an account.
 </div>
 
-<div class="container-fluid"style="display:block;">
+<div class="container-fluid block">
 
-    <form th:object="${login}" method="post"style="width:800px;">
+    <form th:object="${login}" method="post" class="page">
         <div class="form-group">
             <input class="form-control"name="username" placeholder="Enter a username"th:field="*{username}">
             <span th:errors="*{username}" class="error"></span>
@@ -36,6 +36,12 @@
 </div>
 
 <style>
+.page{
+width:800px;
+}
+.block{
+display:block;
+}
 .login-title{
  font-family: 'Barriecito', cursive;
  text-align:center;

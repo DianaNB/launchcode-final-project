@@ -31,15 +31,12 @@
          $('#demo1').circleType({fluid:true});
 updateRadius();
       </script>
-<!--        <img class="img-responsive img-border" src="/images/blue-eyed.jpg" alt="Ball Python."style="position:relative;height:165.33px;width:248px;left:100px;">-->
-<!--        <img class="img-responsive img-border" src="/images/blueeyed1.jpg" alt="Ball Python."style="position:relative;height:141.75px,width:141.25px;top:0px;">-->
-<!--        <div class="col"style="margin:-20px;">-->
-<!--        <div class="col">-->
-<!--&lt;!&ndash;        <img class="img-responsive img-border" src="/images/lucy3.png" alt="Ball Python."style="position:relative;height:143.25px;width:136.75px;left:10px; top:20px;">&ndash;&gt;-->
-<!--</div>-->
+
         <center>
+            <div title = "Leucistic Ball Python">
     <img class="img-responsive img-border" src="/images/ballpython1.jpg" alt="Ball Python."style="position:relative;height:316.7px;width:350px;bottom:0px;">
-</center>
+            </div>
+        </center>
 
 <style>
 .img-border{
@@ -68,11 +65,10 @@ top:130px;
 
 
 <br>
-    <nav style="text-align: center;">
+    <nav class="nav-style">
         <a href="/"class="brk-btn">Home</a>
         <a href="/posts/list"class="brk-btn">View All(Posts)</a>
         <a href="/posts/create-post"class="brk-btn">Add Post</a>
-
         <hr class="style2">
     </nav>
 
@@ -84,18 +80,31 @@ top:130px;
 <a id="top"></a>
 <div class="container-fluid">
 
-        <div class="col-xs-4 mx-auto" style="font-size:15px;position:absolute; left:10px; top:20px;">
+        <div class="col-xs-4 mx-auto">
             <a class="brk-btn1"th:unless="${userId}" href="/register">Register</a>
             <a class="brk-btn1"th:unless="${userId}" href="/login">Log In</a>
             <a class="brk-btn1" th:if="${userId}" href="/logout">Log Out</a>
             <br>
             <br>
-            <a style="color:white;"th:if="${userId}" th:text="${'Welcome ' + user.username + '!'}"></a>
-<!--            <a style="color:white;"th:unless="${userId}">You aren't signed in :(</a>-->
+            <span class="ifs"th:if="${userId}" th:text="${'Welcome ' + user.username + '!'}"></span>
+            <span class="ifs"th:if="${logout}"th:text="${logout}"></span>
+            <span class="ifs"th:if="${message}"th:text="${message}"></span>
         </div>
 </div>
 
 <style>
+.mx-auto{
+font-size:15px;
+position:absolute;
+left:10px;
+top:20px;
+}
+.ifs {
+color:white;
+}
+.nav-style {
+text-align: center;
+}
 hr.style2 {
 	border-top: 15px double #8c8b8b;
 	width:100%;
@@ -174,6 +183,7 @@ height: 100%;
 }
 ::-webkit-scrollbar-thumb:window-inactive {
 	background: aqua;
+
 }
 </style>
 
@@ -182,24 +192,30 @@ height: 100%;
 <footer th:fragment="footer" class="page-footer font-small unique-color-dark">
 <br>
     <br>
-    <div style="background-color: aqua;">
+    <div class="footer-box">
         <div class="container">
-
             <div class="row py-4 d-flex align-items-center">
-
                 <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-                    <h6> <a style="color:black;"id="back2Top" title="Back to top" href="#">Back to top</a>
+                    <h6> <a id="back2Top" title="Back to top" href="#">Back to top</a>
                     </h6>
 
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Footer Links -->
     <div class="container text-center text-md-left mt-5">
     </div>
     <div class="footer-copyright text-center py-3">© 2019 Copyright: Adrienne
     </div>
+
+    <style>
+        .footer-box{
+	background-color: aqua;
+	}
+	#back2Top {
+	color:black;
+	}
+
+    </style>
 </footer>
 </html>

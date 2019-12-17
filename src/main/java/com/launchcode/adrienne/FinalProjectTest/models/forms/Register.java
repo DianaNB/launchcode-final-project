@@ -5,7 +5,7 @@ import javax.validation.constraints.Pattern;
 
 public class Register extends Login {
     @NotNull
-    @Pattern(regexp = "(\\S){4,20}", message = "Password must have 4-20 characters")
+    @Pattern(regexp = "(\\S){3,20}", message = "Password must have 3-20 characters")
     private String confirmPassword;
 
 
