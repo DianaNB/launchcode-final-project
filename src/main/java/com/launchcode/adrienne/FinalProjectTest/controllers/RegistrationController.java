@@ -35,6 +35,7 @@ public class RegistrationController extends MainController {
         }
         if (!registerFormData.getPassword().equals(registerFormData.getConfirmPassword())) {
             errors.rejectValue("password", "password.invalid", "Passwords do not match");
+            model.addAttribute("heading", "Register");
             return "register";
         }
 
@@ -42,6 +43,7 @@ public class RegistrationController extends MainController {
 
         if (existingUser != null) {
             errors.rejectValue("username", "username.alreadyexists", "A user with that username already exists");
+            model.addAttribute("heading", "Register");
             return "register";
         }
         redirectAttributes.addFlashAttribute("message","Thanks for signing up, you are now logged in");

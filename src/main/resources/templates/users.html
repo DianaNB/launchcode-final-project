@@ -7,13 +7,13 @@
 <h1 th:text="${title}">Default Title</h1>
 
 <div class="border">
-<h2 th:text="${heading}">Default Heading</h2>
-<i th:unless="${post} and ${post.size()}">No posts yet :( </i>
+    <h2 th:text="${heading}">Default Heading</h2>
+    <i th:unless="${users} and ${users.size()}">No users yet :( </i>
 
     <div class="container-fluid post-list">
         <ul>
-            <li th:each="post : ${post}">
-                <a class="post-text" th:href="'/posts/view/' + ${post.id}" th:text="${post.title}"></a></li>
+            <li th:each="user : ${users}">
+                <span class="post-text" th:text="${user.username}"></span></li>
         </ul>
     </div>
 </div>
@@ -25,11 +25,8 @@
    .post-text {
    color: white;
    font-size: 25px;
-    word-wrap: break-word;
    }
-   .post-text:hover{
-   color:white;
-   }
+
    .post-list{
    display:block;
    width:800px;
@@ -40,9 +37,7 @@
    color:aqua;
    margin-left:40px;
    }
-   i {
-   text-align:center;
-   }
+
 
 </style>
 <footer th:replace="fragments :: footer"></footer>
