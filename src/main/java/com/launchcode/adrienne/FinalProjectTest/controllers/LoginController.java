@@ -59,7 +59,7 @@ public class LoginController extends MainController {
 public String displayUsers(Model model) {
         model.addAttribute("users",userDao.findAll());
         model.addAttribute("heading","All Users");
-        return "/users";
+        return "users";
 }
 @RequestMapping(value = "/logout", method = RequestMethod.GET)
 public String logout(HttpServletRequest request, RedirectAttributes redirectAttributes){
