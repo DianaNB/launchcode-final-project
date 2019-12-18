@@ -6,11 +6,11 @@
 <h2 th:replace="fragments :: title"></h2>
 <h1 th:text="${title}">Default Title</h1>
 
-<div class="border">
+<div class="container border">
     <h2 th:text="${heading}">Default Heading</h2>
     <i th:unless="${users} and ${users.size()}">No users yet :( </i>
 
-    <div class="container-fluid post-list">
+    <div>
         <ul>
             <li th:each="user : ${users}">
                 <span class="post-text" th:text="${user.username}"></span></li>
@@ -25,11 +25,6 @@
    .post-text {
    color: white;
    font-size: 25px;
-   }
-
-   .post-list{
-   display:block;
-   width:800px;
    }
    ul{
    list-style-type:square;

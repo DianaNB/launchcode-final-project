@@ -6,10 +6,10 @@
 <h2 th:replace="fragments :: title"></h2>
 <h1 th:text="${title}">Default Title</h1>
 
-<div class="border">
+<div class="container border">
 <h2 class="add-title"th:text="${heading}">Default Heading</h2>
 
-<div class="container-fluid">
+<div>
 <form method="post"th:object="${post}">
     <div class="form-group">
         <label th:for="title">Title of New Post:</label>
@@ -75,12 +75,8 @@
     font-size:15px;
     color:black;
     }
-    .container-fluid{
-    display:block;
-    }
-    form{
-    width:800px;
-    }
+
+
 </style>
     </div>
 <input type="hidden"name="userId"th:value="${userId}">

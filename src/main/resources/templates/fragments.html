@@ -4,11 +4,11 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title th:text="${title}">Noodle | Web App For Snake People</title>
-<!--    CSS-->
+    <!--    CSS-->
     <link href="https://fonts.googleapis.com/css?family=Barriecito|Emilys+Candy|Finger+Paint|Frijole|Nosifer|Vast+Shadow&display=swap|Waiting+for+the+Sunrise&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
     <link href="https://fonts.googleapis.com/css?family=Dosis:700" rel="stylesheet">
-<!--    JS-->
+    <!--    JS-->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -27,18 +27,19 @@
         <script type="text/javascript" src="https://rawgit.com/peterhry/CircleType/master/dist/circletype.min.js"></script>
         <script>
          const circleType = new CircleType(document.getElementById('demo1'));
-         circleType.radius(380);
+         circleType.radius(280);
          $('#demo1').circleType({fluid:true});
 updateRadius();
       </script>
 
         <center>
+            <br>
             <div title = "Leucistic Ball Python">
-    <img class="img-responsive img-border" src="/images/ballpython1.jpg" alt="Ball Python."style="position:relative;height:316.7px;width:350px;bottom:0px;">
+                <img class="img-responsive img-border" src="/images/ballpython1.jpg" alt="Ball Python."style="height:316.7px;width:350px;bottom:0px;">
             </div>
         </center>
 
-<style>
+        <style>
 .img-border{
     border-color: #222;
     border-width: 8px;
@@ -46,32 +47,40 @@ updateRadius();
     border-radius: 50%;
     box-shadow:0 0 0 2px aqua;
 }
-
 #demo1 {
-font-size:5vw;
+font-size:5.5vw;
 font-family: 'Vast Shadow', cursive;
 position:absolute;
 left:180px;
 top:50px;
-}
+ mix-blend-mode: screen;
 
+}
 h3 {
 position:absolute;
 left:30px;
-top:130px;
+top:140px;
+ mix-blend-mode: difference;
+
+}
+h3:after {
+ mix-blend-mode: difference;
+}
+#demo1:after {
+ mix-blend-mode: screen;
 }
 </style>
 
 
 
-<br>
-    <nav class="nav-style">
-        <a href="/"class="brk-btn">Home</a>
-        <a href="/posts/list"class="brk-btn">View All(Posts)</a>
-        <a href="/posts/create-post"class="brk-btn">Add Post</a>
-        <a href="/users"class="brk-btn">Users</a>
-        <hr class="style2">
-    </nav>
+        <br>
+        <nav class="nav-style">
+            <a href="/"class="brk-btn">Home</a>
+            <a href="/posts/list"class="brk-btn">View All(Posts)</a>
+            <a href="/posts/create-post"class="brk-btn">Add Post</a>
+            <a href="/users"class="brk-btn">Users</a>
+            <hr class="style2">
+        </nav>
 
     </div>
 </header>
@@ -81,22 +90,23 @@ top:130px;
 <a id="top"></a>
 <div class="container-fluid">
 
-        <div class="col-xs-4 mx-auto">
-            <a class="brk-btn1"th:unless="${userId}" href="/register">Register</a>
-            <a class="brk-btn1"th:unless="${userId}" href="/login">Log In</a>
-            <a class="brk-btn1" th:if="${userId}" href="/logout">Log Out</a>
-            <br>
-            <br>
-            <span class="ifs"th:if="${userId}" th:text="${'Welcome ' + user.username + '!'}"></span>
-            <span class="ifs"th:if="${logout}"th:text="${logout}"></span>
-            <span class="ifs"th:if="${message}"th:text="${message}"></span>
-        </div>
+    <div class="col-xs-4 mx-auto">
+        <a class="brk-btn1"th:unless="${userId}" href="/register">Register</a>
+        <a class="brk-btn1"th:unless="${userId}" href="/login">Log In</a>
+        <a class="brk-btn1" th:if="${userId}" href="/logout">Log Out</a>
+        <br>
+        <br>
+        <span class="ifs"th:if="${userId}" th:text="${'Welcome ' + user.username + '!'}"></span>
+        <span class="ifs"th:if="${logout}"th:text="${logout}"></span>
+        <span class="ifs"th:if="${message}"th:text="${message}"></span>
+    </div>
 </div>
 
 <style>
 .mx-auto{
 font-size:15px;
 position:absolute;
+display:inline-block;
 left:10px;
 top:20px;
 }
@@ -105,6 +115,7 @@ color:white;
 }
 .nav-style {
 text-align: center;
+display:inline-block;
 }
 hr.style2 {
 	border-top: 15px double #8c8b8b;
@@ -120,7 +131,6 @@ hr.style2 {
   border: 0.1em solid aqua;
   padding: 0.2em 0.2em;
 }
-
 .brk-btn {
   position: relative;
   background: none;
@@ -136,19 +146,18 @@ color:white;
 .brk-btn1:hover{
 color:white;
 }
-
 .border {
     border-style:solid;
     border-color:aqua;
-    border-width:2px;
+    border-width:0.25vw;
     border-spacing:20px;
+    max-width:900px;
+    width:95%;
     }
-
  .form-control {
         font-size:15px;
         color:black;
         }
-
 body {
   display: flex;
   flex-direction: column;
@@ -165,20 +174,16 @@ height: 100%;
 width: 100%;
 height: 100%;
 }
-
 /* scrollbar */
 ::-webkit-scrollbar {
     width: 14px;
-
 }
-
 /* Track */
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     -webkit-border-radius: 10px;
     border-radius: 10px;
 }
-
 /* Handle */
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
@@ -188,14 +193,13 @@ height: 100%;
 }
 ::-webkit-scrollbar-thumb:window-inactive {
 	background: aqua;
-
 }
 </style>
 
 </body>
 
 <footer th:fragment="footer" class="page-footer font-small unique-color-dark">
-<br>
+    <br>
     <br>
     <div class="footer-box">
         <div class="container">
@@ -210,7 +214,7 @@ height: 100%;
     </div>
     <div class="container text-center text-md-left mt-5">
     </div>
-    <div class="footer-copyright text-center py-3">© 2019 Copyright: Adrienne
+    <div class="footer-copyright text-center py-3">© 2019 Copyright: <span><a class="link"href="https://www.linkedin.com/in/adrienne-koeck-3ab755145/">Adrienne</a></span>
     </div>
 
     <style>
@@ -220,7 +224,12 @@ height: 100%;
 	#back2Top {
 	color:black;
 	}
-
+	.link {
+	color:grey;
+	}
+	.link:hover {
+	color:white;
+	}
     </style>
 </footer>
 </html>

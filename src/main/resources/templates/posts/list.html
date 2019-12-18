@@ -6,17 +6,19 @@
 <h2 th:replace="fragments :: title"></h2>
 <h1 th:text="${title}">Default Title</h1>
 
-<div class="border">
+
+<div class="container border">
 <h2 th:text="${heading}">Default Heading</h2>
 <i th:unless="${post} and ${post.size()}">No posts yet :( </i>
 
-    <div class="container-fluid post-list">
+    <div>
         <ul>
             <li th:each="post : ${post}">
                 <a class="post-text" th:href="'/posts/view/' + ${post.id}" th:text="${post.title}"></a></li>
         </ul>
     </div>
 </div>
+
 <style>
     h2 {
         font-family: 'Barriecito', cursive;
@@ -30,19 +32,14 @@
    .post-text:hover{
    color:white;
    }
-   .post-list{
-   display:block;
-   width:800px;
-   }
+
    ul{
    list-style-type:square;
    font-size:30px;
    color:aqua;
    margin-left:40px;
    }
-   i {
-   text-align:center;
-   }
+
 
 </style>
 <footer th:replace="fragments :: footer"></footer>

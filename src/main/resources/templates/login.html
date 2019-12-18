@@ -6,15 +6,15 @@
 <h2 th:replace="fragments :: title"></h2>
 <h1 th:text="${title}">Default Title</h1>
 
-<div class="border">
+<div class="container border">
 <h2 class="login-title"th:text="${heading}">Default Heading</h2>
 <div class="register">
         or <a class="reg-link"href="/register">register</a> for an account.
 </div>
 
-<div class="container-fluid block">
+<div>
 
-    <form th:object="${login}" method="post" class="page">
+    <form th:object="${login}" method="post">
         <div class="form-group">
             <input class="form-control"name="username" placeholder="Enter a username"th:field="*{username}">
             <span th:errors="*{username}" class="error"></span>

@@ -12,28 +12,33 @@
 <section class="container-fluid">
 
     <div title="Ball Python">
-    <div class="row python-row">
+    <div class="row">
     <div class="col-xs-6 hvr-float-shadow">
         <h2>Pythons</h2>
         <a href ="posts/posts-in-category/Python"><img src="/images/python.jpg"alt="Ball Python"class="img-responsive img-border"></a>
-<br>
-        <span class="col text">
+    </div>
+        <br>
+        <div class="pic">
+            <br>
+            <div class="col-xs-6 text">
 Family of non-venomous snakes, among them some of the largest in the world. Pythons are extremely popular in the reptile community.
-        </span>
+                <span class="text1">
         <ul>
+            <br>
             <li>
-                Ball Python
+                <section class="item">Ball Python</section>
             </li>
             <li>
-                Reticulated Python
+                <section class="item">Reticulated Python</section>
             </li>
             <li>
-               Green Tree Python
+                <section class="item">Green Tree Python</section>
             </li>
         <li>
-           Burmese Python, and more
+            <section class="item">Burmese Python, and more</section>
         </li>
         </ul>
+                </span>
     </div>
     </div>
     </div>
@@ -43,58 +48,69 @@ Family of non-venomous snakes, among them some of the largest in the world. Pyth
 
 <div title="Rosy Boa">
     <div class="row">
-    <div class="col-xs-6 hvr-float-shadow">
+    <div class="col-xs-6 col-xs-offset-6 hvr-float-shadow">
         <h2>Boas</h2>
         <a href ="posts/posts-in-category/Boa"><img src="/images/rosy.jpg"alt="Rosy Boa"class="img-responsive img-border"></a>
+    </div>
         <br>
-        <span class="col text">
+        <div class="pic">
+            <br>
+            <div class="col-xs-6 col-xs-offset-8 text">
             Heavy-bodied and non-venomous, boas are largely bred in captivity and make great, low-maintenance pets.
-        </span>
+        <span class="text1">
         <ul>
             <li>
-                Boa Constrictor
+                <section class="item">Boa Constrictor</section>
             </li>
             <li>
-                Sand Boa
+                <section class="item">Sand Boa</section>
             </li>
             <li>
-                Amazon Tree Boa
+                <section class="item">Amazon Tree Boa</section>
             </li>
             <li>
-                Rainbow Boa, and more
+                <section class="item">Rainbow Boa, and more</section>
             </li>
         </ul>
+        </span>
     </div>
     </div>
     </div>
+
 
 
 <div title="Kingsnake">
-    <div class="row">
-    <div class="col-xs-6 hvr-float-shadow">
-        <h2>Colubrids</h2>
-        <a href ="posts/posts-in-category/Colubrid"><img src="/images/kingsnake.jpg"alt="Indigo Snake"class="img-responsive img-border"></a>
-        <br>
-        <span class="col text">
-            The largest family of snakes, found on every continent except Antarctica. Largely non-venomous.
-        </span>
+        <div class="row">
+            <div class="col-xs-6 hvr-float-shadow">
+                <h2>Colubrids</h2>
+                <a href ="posts/posts-in-category/Colubrid"><img src="/images/kingsnake.jpg"alt="Kingsnake"class="img-responsive img-border"></a>
+            </div>
+            <br>
+            <div class="pic">
+                <br>
+                <div class="col-xs-6 text">
+                    The largest family of snakes, found on every continent except Antarctica. Mostly non-venomous.
+
+                    <span class="text1">
         <ul>
             <li>
-                Corn Snake
+                <section class="item">Corn Snake</section>
             </li>
             <li>
-                Kingsnake
+                <section class="item">Kingsnake</section>
             </li>
             <li>
-                Rat Snake
+                <section class="item">Rat Snake</section>
             </li>
             <li>
-                Garter Snake, and more
+                <section class="item">Garter Snake, and more</section>
             </li>
         </ul>
-    </div>
-    </div>
-    </div>
+</span>
+                </div>
+            </div>
+        </div>
+
 
 
     <style>
@@ -107,21 +123,36 @@ Family of non-venomous snakes, among them some of the largest in the world. Pyth
     text-align: center;
     }
     .text {
-    font-family: 'Waiting for the Sunrise', cursive;
-    font-size: 20px;
+    font-size: 25px;
     text-align:center;
+    word-wrap:break-word;
+
+
     }
-    .python-row {
-    margin:-20px;
+    .text1 {
+    font-size: 25px;
+    text-align:left;
+      word-wrap:break-word;
     }
+
     ul{
    list-style-type:square;
    font-size:25px;
-   color:grey;
+   color:aqua;
+   }
+   .item {
+   color: white;
    }
 
 
+ .pic {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  text-align:justify;
+}
     .hvr-float-shadow {
+  text-align:justify;
   display: inline-block;
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
