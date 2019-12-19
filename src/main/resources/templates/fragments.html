@@ -17,6 +17,7 @@
     <script src="http://circletype.labwire.ca/js/plugins.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/peterhry/CircleType/master/dist/circletype.min.js"></script>
 </head>
 
 <!--title-->
@@ -31,11 +32,10 @@
          $('#demo1').circleType({fluid:true});
 updateRadius();
       </script>
-
         <center>
             <br>
             <div title = "Leucistic Ball Python">
-                <img class="img-responsive img-border" src="/images/ballpython1.jpg" alt="Ball Python."style="height:316.7px;width:350px;bottom:0px;">
+                <img class="img-responsive img-border" src="/images/ballpython1.jpg" alt="Ball Python."style="height:316.7px;width:350px;bottom:0em;">
             </div>
         </center>
 
@@ -54,14 +54,12 @@ position:absolute;
 left:180px;
 top:50px;
  mix-blend-mode: screen;
-
 }
 h3 {
 position:absolute;
 left:30px;
 top:140px;
  mix-blend-mode: difference;
-
 }
 h3:after {
  mix-blend-mode: difference;
@@ -71,9 +69,8 @@ h3:after {
 }
 </style>
 
-
-
         <br>
+        <center>
         <nav class="nav-style">
             <a href="/"class="brk-btn">Home</a>
             <a href="/posts/list"class="brk-btn">View All(Posts)</a>
@@ -81,6 +78,7 @@ h3:after {
             <a href="/users"class="brk-btn">Users</a>
             <hr class="style2">
         </nav>
+        </center>
 
     </div>
 </header>
@@ -89,7 +87,6 @@ h3:after {
 
 <a id="top"></a>
 <div class="container-fluid">
-
     <div class="col-xs-4 mx-auto">
         <a class="brk-btn1"th:unless="${userId}" href="/register">Register</a>
         <a class="brk-btn1"th:unless="${userId}" href="/login">Log In</a>
@@ -107,15 +104,16 @@ h3:after {
 font-size:15px;
 position:absolute;
 display:inline-block;
-left:10px;
-top:20px;
+padding:1em;
+left:2em;
+top:0em;
 }
 .ifs {
 color:white;
 }
 .nav-style {
-text-align: center;
 display:inline-block;
+padding:1em;
 }
 hr.style2 {
 	border-top: 15px double #8c8b8b;
@@ -130,6 +128,8 @@ hr.style2 {
   text-decoration: none;
   border: 0.1em solid aqua;
   padding: 0.2em 0.2em;
+  display:inline-block;
+
 }
 .brk-btn {
   position: relative;
@@ -139,6 +139,8 @@ hr.style2 {
   text-decoration: none;
   border: 0.2em solid aqua;
   padding: 0.5em 1em;
+  display:inline-block;
+
 }
 .brk-btn:hover{
 color:white;
